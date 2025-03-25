@@ -1,0 +1,408 @@
+@font-face {
+   font-family: ShobujNolua;
+   src: url(../lib/fonts/ShobujNoluaUnicode.ttf);
+}
+
+.header {
+   background-color: #fff;
+}
+
+.btn-details {
+   background: transparent linear-gradient(111deg, #658B6F 0%, #356C75 100%) 0% 0% no-repeat padding-box !important;
+}
+
+.btn-details:hover {
+   background: transparent linear-gradient(249deg, #658B6F 0%, #356C75 100%) 0% 0% no-repeat padding-box !important;
+}
+
+.course-home-section {
+   background: #FFFFFF;
+}
+
+.course-home-section .load-more {
+   background: #FFFFFF;
+   box-shadow: 0px -17px 65px 100px rgb(255 255 255);
+}
+
+.course-home-section h1 {
+   color: #313131;
+   border-color: #0f025400;
+}
+
+.course-details {
+   background: linear-gradient(to bottom, #468E9A, #356C75);
+}
+
+.branch-section {
+   background-color: #2F575D;
+}
+
+.branch-details {
+   background: #2F575D;
+}
+
+.branch-section .card .phoneNo .number::before,
+.branch-details-view .card .phoneNo .number::before,
+.branch-details-view .address span::before {
+   background-color: #2F3E09;
+}
+
+.branch-section h1 {
+   border-color: #ffffff00;
+}
+
+.success-section {
+   background: #EDF1F4;
+   position: relative;
+   z-index: 1;
+}
+
+.success-section h1 {
+   color: #313131;
+   border-color: #1e3aab00;
+}
+
+.success-section::after {
+   background-image: url('../img/unmesh/successAfter.png');
+   width: 675px;
+   height: 380px;
+   right: 0;
+   top: 0;
+}
+
+.counter-section {
+   background: #EDF1F4;
+}
+
+.counter-section::before {
+   background-image: url('../img/unmesh/counterBefore.png');
+   width: 675px;
+   height: 380px;
+   left: 0;
+   bottom: 0;
+   z-index: 0;
+}
+
+.testimonial-section {
+   background-color: #fff;
+   background-image: none;
+}
+
+.testimonial-section::after {
+   background-image: url('../img/unmesh/testimonialAfter.png');
+   right: 0;
+   top: 0;
+   width: 550px;
+   height: 365px;
+   z-index: 0;
+}
+
+.testimonial-section::before {
+   background-image: url('../img/unmesh/testimonialBefore.png');
+   left: 0;
+   bottom: 0;
+   width: 550px;
+   height: 365px;
+   z-index: 0;
+}
+
+.testimonial-section .card .card-body p {
+   font-family: "Hind Siliguri",
+      sans-serif;
+   color: #000000;
+   font-size: 24px;
+   margin-bottom: 0px;
+   line-height: 30px;
+   position: relative;
+}
+
+.testimonial-section h1 {
+   color: #313131;
+   border-color: #36363600;
+}
+
+.testimonial-section .card hr {
+   opacity: 0;
+}
+
+.testimonial-section .testmonial .card {
+   box-shadow: none !important;
+}
+
+.testimonial-section .quote {
+   margin-bottom: 35px;
+}
+
+.testimonial-section .quote span {
+   position: absolute;
+   width: 0;
+   height: 0;
+   border: 15px solid transparent;
+   border-right: 0px solid red;
+   left: 0;
+   top: 0;
+}
+
+.testimonial-section .quote span:nth-child(1) {
+   margin-right: 5px;
+   left: 0;
+}
+
+.testimonial-section .quote span:nth-child(2) {
+   left: 25px;
+}
+
+@media (max-width: 991px) {
+   .testimonial-section::before {
+      z-index: -1;
+   }
+
+   .testimonial-section .card .card-body p {
+      font-size: 20px !important;
+   }
+}
+
+.video-section {
+   background-image: url('../img/unmesh/videoBackground.png');
+}
+
+.video-section h1 {
+   color: #2F575D;
+   border-color: #6584e300;
+}
+
+.service-section {
+   background-color: #ffffff;
+}
+
+.service-section::before {
+   background-image: url('../img/unmesh/serviceBefore.png');
+   left: 0;
+   bottom: 0;
+   width: 390px;
+   height: 535px;
+}
+
+.service-section::after {
+   background-image: url('../img/unmesh/serviceAfter.png');
+   right: 0;
+   top: 0;
+   width: 320px;
+   height: 640px;
+}
+
+.service-section h1 {
+   color: #313131;
+   border-color: #69be4500;
+   z-index: 1;
+}
+
+.easy-written-section {
+   background-color: #EDF1F4;
+   background-image: none;
+}
+
+.easy-written-section::after {
+   background-image: url('../img/unmesh/haselFreeAfter.png');
+   right: 0;
+   top: 0;
+   width: 215px;
+   height: 255px;
+   z-index: 0;
+}
+
+.easy-written-section::before {
+   background-image: url('../img/unmesh/haselFreeBefore.png');
+   left: 0;
+   bottom: 0;
+   width: 390px;
+   height: 305px;
+   z-index: 0;
+}
+
+.easy-written-section h2 {
+   color: #EA3A3A;
+}
+
+.easy-written-section h1 {
+   color: #2F575D;
+}
+
+.hasel-free-section {
+   background-color: #fff;
+}
+
+.hasel-free-section::after {
+   background-image: url('../img/unmesh/easyAfter.png');
+   right: 0;
+   top: 0;
+   width: 109px;
+   height: 309px;
+   z-index: 0;
+}
+
+.hasel-free-section::before {
+   background-image: url('../img/unmesh/easyBefore.png');
+   left: 0;
+   bottom: 0;
+   width: 142px;
+   height: 211px;
+   z-index: 0;
+}
+
+.hasel-free-section h1 {
+   color: #2F575D;
+}
+
+.footer-section {
+   background-color: #162126;
+}
+
+footer {
+   background-color: #162126;
+}
+
+.header {
+   background-color: #fff;
+}
+
+.btn-details {
+   background: transparent linear-gradient(111deg, #0078FF 0%, #840DC9 100%) 0% 0% no-repeat padding-box !important;
+}
+
+.btn-details:hover {
+   background: transparent linear-gradient(249deg, #0078FF 0%, #840DC9 100%) 0% 0% no-repeat padding-box !important;
+}
+
+.course-home-section {
+   background: linear-gradient(124deg, #a886cd, transparent);
+}
+
+.course-home-section .load-more {
+   background: #E1DBFF;
+   box-shadow: 0px -17px 65px 100px rgb(225 219 255);
+}
+
+.course-home-section h1 {
+   color: #0F0254;
+   border-color: #0f025482;
+}
+
+.course-details {
+   background: linear-gradient(to bottom, #008377, #1FA396);
+}
+
+.branch-section {
+   background-color: #904FF4;
+}
+
+.branch-details {
+   background: #904FF4;
+}
+
+.branch-section .card .phoneNo .number::before,
+.branch-details-view .card .phoneNo .number::before,
+.branch-details-view .address span::before {
+   background-color: #2BC144;
+}
+
+.success-section {
+   background-image: url('../img/udvash/successbg.png');
+}
+
+.success-section h1 {
+   color: #112780;
+   border-color: #1e3aab44;
+}
+
+.counter-section {
+   background-image: url('../img/udvash/counterbg.png');
+}
+
+.testimonial-section {
+   background-color: #fff;
+   background-image: url('../img/udvash/testimonialbg.png');
+}
+
+.testimonial-section .card .card-body p {
+   font-family: BalooDa2;
+   color: #000000;
+   font-size: 17px;
+}
+
+.testimonial-section h1 {
+   color: #580000;
+   border-color: #36363649;
+}
+
+.testimonial-section .card hr {
+   opacity: 1;
+}
+
+.testimonial-section .quote {
+   display: none;
+}
+
+.video-section {
+   background-image: url('../img/udvash/videobg.png');
+}
+
+.video-section h1 {
+   color: #6585E3;
+   border-color: #6584e33f;
+}
+
+.service-section {
+   background-color: #F5FDFF;
+}
+
+.service-section::before {
+   background-image: url('../img/udvash/serviceBefore.png');
+   left: 0;
+   top: 0;
+   width: 100px;
+   height: 480px;
+}
+
+.service-section::after {
+   background-image: url('../img/udvash/serviceAfter.png');
+   right: 0;
+   bottom: 0;
+   width: 700px;
+   height: 400px;
+}
+
+.service-section h1 {
+   color: #333;
+   border-color: #69be4542;
+   z-index: 1;
+}
+
+.easy-written-section {
+   background-color: #ecf7e7;
+   background: url('../img/udvash/easyBg.png');
+}
+
+.easy-written-section h2 {
+   color: #6ABE45;
+}
+
+.easy-written-section h1 {
+   color: #6ABE45;
+}
+
+.hasel-free-section {
+   background-color: #FAEFFF;
+}
+
+.hasel-free-section h1 {
+   color: #995699;
+}
+
+.footer-section {
+   background-color: #333;
+}
+
+footer {
+   background-color: #333;
+}

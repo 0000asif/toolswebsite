@@ -1,0 +1,228 @@
+@media screen and (max-width: 990px) {
+   .header {
+      display: none;
+   }
+}
+
+@media screen and (max-width: 574px) {
+   .sirajganj_all_posts_filter {
+      padding: 0;
+   }
+
+   .sirajganj_all_posts_card_body {
+      padding: 10px 0;
+   }
+
+   .sirajganj_all_posts_row {
+      row-gap: 10px;
+   }
+
+   .sirajganj_all_posts_res_container {
+      padding: 0;
+   }
+
+   .sirajganj_all_posts_res_row {
+      row-gap: 10px;
+   }
+
+   .sirajganj_single_post_container {
+      padding: 0;
+   }
+
+   .sirajganj_all_blogs_filter {
+      padding: 0;
+   }
+
+   .sirajganj_all_blogs_card_body {
+      padding: 10px 0;
+   }
+
+   .sirajganj_all_blogs_row {
+      row-gap: 10px;
+   }
+
+   .sirajganj_all_blogs_res_container {
+      padding: 0;
+   }
+
+   .sirajganj_all_blogs_res_row {
+      row-gap: 10px;
+   }
+
+   .sirajganj_single_blog_container {
+      padding: 0;
+   }
+
+   .sirajganj_related_view {
+      padding: 0;
+   }
+
+   .sirajganj_related_container {
+      padding: 0;
+   }
+
+   .sirajganj_related_row {
+      row-gap: 10px;
+   }
+
+   .sirajganj_blood_post_col_12 {
+      padding: 0;
+   }
+
+   .sirajganj_user_login {
+      padding: 0;
+   }
+
+   .sirajganj_user_login_card {
+      padding: 15px !important;
+   }
+
+   .sirajganj_customer_profile_container {
+      padding: 0;
+   }
+
+   .sirajganj_customer_profile_row {
+      row-gap: 10px;
+   }
+
+   .home_post_container {
+      padding: 0;
+   }
+
+   #testimonials {
+      padding: 15px 0;
+   }
+
+   .footer_container {
+      padding: 0;
+   }
+
+   .footer_demo_section {
+      padding: 0;
+   }
+   .blog_title_h1_taq {
+      font-size: 20px!important;
+   }
+}
+
+/* Media query for smaller devices */
+@media (max-width: 900px) {
+   .footer_sticky {
+      display: block;
+      /* Display the footer sticky menu */
+   }
+
+   .container.car_card {
+      padding: 5px 0px 5px 0px !important;
+      margin: 5px 0 !important;
+   }
+
+   .container.car_card1 {
+      padding: 2px 2px 2px 2px !important;
+      margin: 0px 0 !important;
+   }
+
+   .sirajganj_cat_card img {
+      width: 100%;
+      max-width: 70px;
+   }
+
+   .mas_batch {
+      padding: 5px !important;
+   }
+
+   /* 
+      .carousel-inner {
+         position: relative !important;
+         width: 100% !important;
+         overflow: hidden !important;
+         height: 150px !important;
+      } */
+}
+
+/* Media Small query for Mobile devices */
+@media (max-width: 768px) {
+   .sirajganj_cat_card h2 {
+      font-size: 15px;
+   }
+
+   .sirajganj_cat_card {
+      padding: 6px;
+   }
+
+   .doner_item {
+      width: 100% !important;
+      max-width: none;
+   }
+
+   .blood_item {
+      width: 100% !important;
+      max-width: none;
+   }
+
+   .wish_middle {
+      text-align: center !important;
+   }
+
+   .row.front_home {
+      row-gap: 0px;
+   }
+
+   .row.front_search {
+      row-gap: 8px;
+   }
+
+   .home_section_main {
+      padding: 10px 0;
+   }
+
+   .home_heading {
+      font-size: 25px;
+      font-weight: 500;
+   }
+
+   .row.category_row {
+      row-gap: 10px;
+   }
+
+   .mas_filter.all-product.home {
+      padding: 8px 0 10px 0;
+   }
+
+   .row.home_fileter {
+      row-gap: 10px;
+   }
+
+   .row.filter_home_product {
+      row-gap: 8px;
+   }
+
+
+
+   .container.home_top_container {
+      padding: 0;
+   }
+
+   .container.hoem_about_section {
+      padding: 0;
+   }
+
+
+
+   .footer-section {
+      padding: 20px 0px;
+      background-color: #333;
+   }
+
+
+
+   .row.footer_row {
+      row-gap: 10px;
+   }
+
+
+   .container.sirajganj_home_filter {
+      padding: 0;
+   }
+
+}

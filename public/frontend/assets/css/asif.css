@@ -1,0 +1,23 @@
+.homepage_category_main {
+   font-size: 2rem;
+   text-align: center;
+}
+
+.homepage_category_para {
+   font-size: 1rem;
+   text-align: center;
+}
+
+.o_we_shape {
+
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   position: absolute !important;
+   display: block;
+   overflow: hidden;
+   background-repeat: no-repeat;
+   pointer-events: none;
+}
