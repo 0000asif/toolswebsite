@@ -8,12 +8,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Create Posts</h1>
+                        <h1>Create Tools</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Create Post</li>
+                            <li class="breadcrumb-item active">Create Tool</li>
                         </ol>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                         <div class="card card-primary">
                             <div class="card-header d-flex align-items-center">
                                 <div class="flex-grow-1">
-                                    <h3 class="card-title">Create Post</h3>
+                                    <h3 class="card-title">Create Tool</h3>
                                 </div>
                                 <div>
                                     <a href="{{ route('tools.index') }}" class="btn btn-dark btn-sm">Back</a>
@@ -49,12 +49,12 @@
                                     <div class="card-body">
                                         <div class="row">
 
-                                            <!-- Post Title -->
+                                            <!-- Tool Title -->
                                             <div class="form-group mb-4 col-md-6">
-                                                <label for="title">Post Title <span class="text-danger">*</span></label>
+                                                <label for="title">Tool Title <span class="text-danger">*</span></label>
                                                 <input required type="text"
                                                     class="form-control @error('title') is-invalid @enderror" name="title"
-                                                    placeholder="Enter Post title" value="{{ old('title') }}">
+                                                    placeholder="Enter Tool title" value="{{ old('title') }}">
                                                 @error('title')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -84,7 +84,7 @@
                                             </div>
 
 
-                                            <!-- Post Main Image -->
+                                            <!-- Tool Main Image -->
                                             <div class="form-group mb-4 col-md-6">
                                                 <label for="main_img">Main Image </label>
                                                 <input id="main_img" type="file" name="main_img" accept="image/*"
@@ -102,9 +102,9 @@
                                             </div>
 
 
-                                            <!-- Post Description -->
+                                            <!-- Tool Description -->
                                             <div class="form-group mb-4 col-md-12">
-                                                <label for="description" class="form-label"> Post Description *</label>
+                                                <label for="description" class="form-label"> Tool Description *</label>
                                                 <textarea id="summernote" placeholder="Enter description" name="description"
                                                     class="note-codable form-control @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
                                                 @error('description')
@@ -114,10 +114,10 @@
                                                 @enderror
                                             </div>
 
-                                            <!-- Post Note -->
+                                            <!-- Tool Note -->
                                             <div class="form-group mb-4 col-md-12">
-                                                <label for="note">Note</label>
-                                                <textarea name="note" class="form-control @error('note') is-invalid @enderror" placeholder="Enter additional notes">{{ old('note') }}</textarea>
+                                                <label for="note">Short Description</label>
+                                                <textarea name="note" id="summernote2"  class="form-control @error('note') is-invalid @enderror" placeholder="Enter additional notes">{{ old('note') }}</textarea>
                                                 @error('note')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -194,6 +194,17 @@
         $(function() {
             // Summernote
             $('#summernote').summernote()
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        });
+
+        $(function() {
+            // Summernote
+            $('#summernote2').summernote()
 
             // CodeMirror
             CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {

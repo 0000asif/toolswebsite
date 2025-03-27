@@ -53,7 +53,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Post</li>
+                            <li class="breadcrumb-item active">Tools</li>
                         </ol>
                     </div>
                 </div>

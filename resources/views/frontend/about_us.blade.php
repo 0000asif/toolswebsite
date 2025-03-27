@@ -19,15 +19,6 @@
                     <div class="head d-flex justify-content-center">
                         <h4 class="head1 text-white" style="margin-bottom: 0px;font-size:25px">{{ $about->title ?? "" }}</h4>
                     </div>
-                    {{-- <div class="category_list">
-                        <ul class="list-inline category_list_items">
-                            @foreach ($sub_cat as $sub_cat)
-                                <li class="list-inline-item category_item_wrapper mb-3">
-                                    <a href="" class="category_item">{{ $sub_cat->name ?? '' }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div> --}}
                 </div>
             </div>
         </div>

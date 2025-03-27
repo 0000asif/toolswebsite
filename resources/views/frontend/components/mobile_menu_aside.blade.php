@@ -102,14 +102,6 @@
                  <li><a href="{{ route('terms-and-conditions') }}"><i class="bi bi-book-fill"></i> <span
                              class="aside_item">টার্মস & কন্ডিশন্স</span></a></li>
 
-                 <!-- User Authentication -->
-                 @if (Auth::guard('customer')->check())
-                     <li><a href="{{ route('CustomerProfile') }}"><i class="bi bi-person-fill"></i> <span
-                                 class="aside_item">প্রোফাইল</span></a></li>
-                 @else
-                     <li><a href="{{ route('CustomerLogin') }}"><i class="bi bi-person-fill"></i> <span
-                                 class="aside_item">লগইন/রেজিঃ</span></a></li>
-                 @endif
 
                  <!-- Connect with Us -->
                  <li class="aside_devider">আমাদের সাথে যুক্ত হোন</li>

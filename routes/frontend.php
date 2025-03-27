@@ -29,7 +29,7 @@ use App\Http\Controllers\CustomerProfileController;
 
 // Route::get('/', function () {
 //    return view('frontend.index');
-// });
+// });   
 Auth::routes();
 // Route::get('/', [FrontendController::class, 'home'])->name('frontHome');
 Route::fallback(function () {
@@ -130,5 +130,5 @@ Route::get('about-us', [FrontendController::class, 'about_us'])->name('about_us'
 Route::get('contact-us', [FrontendController::class, 'contact_us'])->name('contact_us');
 
 // Others 
-Route::post('SaveRevision',[RevisionController::class,'SaveRevision'])->name('SaveRevision');
+Route::post('SaveRevision', [RevisionController::class, 'SaveRevision'])->name('SaveRevision');
 Route::post('SaveContact', [ContactController::class, 'SaveContact'])->name('SaveContact');
