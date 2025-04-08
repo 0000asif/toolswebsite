@@ -11,7 +11,7 @@
             <ul class="nav">
                 <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="{{ Route('frontHome') }}">Home</a>
                 </li>
-                <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="{{ Route('all.post') }}">All
+                <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="">All
                         Tools</a></li>
                 <li class="nav-item"><a class="nav-link text-dark fw-semibold" href="{{ Route('blogs') }}">Blog</a></li>
 

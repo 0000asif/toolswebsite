@@ -113,10 +113,10 @@
                                                     <div class="btn-group">
 
                                                         {{-- Click to copy blog link --}}
-                                                        <button class="btn btn-primary btn-sm"
+                                                        {{-- <button class="btn btn-primary btn-sm"
                                                             onclick="copyToClipboard('{{ route('single.post', $blog->slug) }}')">
                                                             <i class="fa fa-link"></i>
-                                                        </button>
+                                                        </button> --}}
 
                                                         <a target="__blank" href="{{ route('tools.show', $blog->slug) }}"
                                                             class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>

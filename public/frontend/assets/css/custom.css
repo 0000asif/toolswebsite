@@ -124,6 +124,7 @@ button.text-reset.aside-close {
 /* others  */
 .single_post_sidebar {
    border-left: 1px solid #ddd;
+   background: #fcfbf6;
 }
 
 .course-home-section.related_post {

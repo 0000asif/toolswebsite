@@ -73,6 +73,32 @@
             width: 100% !important;
             height: 100% !important;
         }
+        .singlePageBg {
+            background: linear-gradient(45deg, #124e6624, #fbf5dfb8) !important;
+            margin-top: -14px;
+            padding: 15px 0;
+        }
+        .postBody {
+            background: #ffffff91;
+            padding: 15px;
+            border: 1px solid #d9d9d9;
+        }
+        .postBodyDesc {
+            padding: 15px;
+            background: #fcfbf6;
+            margin-top: 10px;
+        }
+        .mainTools {
+            padding: 15px;
+            background: #fcfbf6;
+            border: 1px solid #d9d9d9;
+            border-top: none;
+        }
+        h2.postBodyTitle {
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 0px;
+    }
     </style>
     {!! $setting->header_text !!}
 
