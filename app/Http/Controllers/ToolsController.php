@@ -16,6 +16,9 @@ class ToolsController extends Controller
         if($slug == 'age-calculator'){
             $type = 'age';
         }
+        if($slug == 'strong-password-generator'){
+            $type = 'password_generator';
+        }
 
         return view('frontend.pages.singleTools', compact('relatedBlogs','type'));
     }

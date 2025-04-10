@@ -48,7 +48,7 @@
                            <i class="bi bi-person"></i></span>
                        <span>Profile</span></a>
                 @else
-                     <a href="{{ route('CustomerLogin') }}"><span class="footer_cart">
+                     <a href="><span class="footer_cart">
                            <i class="bi bi-box-arrow-in-right"></i></span>
                        <span>Login</span></a>
                 @endif

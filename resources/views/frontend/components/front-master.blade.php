@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/asif.css">
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/tools.css">
 
 
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/custom.css">

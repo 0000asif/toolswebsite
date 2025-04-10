@@ -50,6 +50,156 @@
             height: 100% !important;
         }
     </style>
+        <style>
+        .accordion {
+            background-color: #333;
+            color: #f1f1f1;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid #444;
+            padding: 15px 0;
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .toggle-icon {
+            font-size: 1.5em;
+            color: #f39c12;
+            transition: transform 0.3s;
+        }
+
+        .accordion-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 1em;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .accordion-content p {
+            margin: 0;
+        }
+
+        .project-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .project-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .project-title a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-title a:hover {
+            color: #007bff;
+        }
+
+        .details-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .details-row strong {
+            font-weight: 600;
+        }
+
+        .badge-custom {
+            background-color: #007bff;
+            color: white;
+            font-size: 0.9rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-left: 5px;
+        }
+
+        .project-info {
+            margin-top: 20px;
+        }
+
+        .icon {
+            margin-right: 8px;
+            color: #007bff;
+        }
+
+        .additional-info {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .additional-info p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .additional-info i {
+            margin-right: 10px;
+            color: #ff6347;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .thumbnail img {
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail img:hover {
+            border-color: #ff5722;
+        }
+
+        .img-thumbnail {
+            width: 180px;
+        }
+
+        @media (max-width: 991px) {
+            .img-thumbnail {
+                width: 120px;
+            }
+        }
+
+        @media (max-width: 761px) {
+            .img-thumbnail {
+                width: 100px;
+            }
+        }
+
+        @media (max-width: 556px) {
+            .img-thumbnail {
+                width: 80px;
+            }
+        }
+    </style>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

@@ -30,7 +30,7 @@ class FrontendController extends Controller
         $upazila     = Upazila::where('district_id', '12')->get();
         $union       = Union::get();
         $categories  = Category::where('status', 1)->orderBy('created_at', 'desc')->get();
-        $tools = Blog::with('category')->get()->groupBy('category_id');
+        $tools = Blog::with('category')->where('status','1')->get()->groupBy('category_id');
         return view('frontend.index', compact('categories', 'upazila', 'union', 'sub_cat','tools'));
     }
     // abdullah end 
