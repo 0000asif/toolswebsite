@@ -87,7 +87,7 @@
 
                                 @foreach ($all_tools as $tool)
                                     <div class="col-md-3 col-4">
-                                        <a href="{{ route('post.details', $tool->slug) }}">
+                                        <a href="{{ route('ViewSingleTools', $tool->slug) }}">
                                             <div class="sirajganj_cat_card">
                                                 <img src="{{ asset('public/images/blogs/' . $tool->main_img) }}" alt="img">
                                                 <h2>{{ $tool->title }}</h2>

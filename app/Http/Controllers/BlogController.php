@@ -72,7 +72,7 @@ class BlogController extends Controller
             Blog::create($blog_data);
             DB::commit();
 
-            return redirect(route('tools.index'))->with('success', 'Blog created successfully');
+            return back()->with('success', 'Blog created successfully');
         } catch (Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('error', $e->getMessage());
@@ -89,8 +89,8 @@ class BlogController extends Controller
     // }
     public function show($slug)
     {
-        $blog = Blog::where('slug', $slug)->first();
-        return view('frontend.post-preview', compact('blog'));
+        // $blog = Blog::where('slug', $slug)->first();
+        // return view('frontend.post-preview', compact('blog'));
     }
 
     /**

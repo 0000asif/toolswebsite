@@ -42,7 +42,7 @@
                        <a href="{{ route('blogs') }}">Blog</a>
                    </span>
                </div>
-               {{-- <div>
+               <div>
                 @if (Auth::guard('customer')->check())
                      <a href="{{ route('CustomerProfile') }}"><span class="footer_cart">
                            <i class="bi bi-person"></i></span>
@@ -52,7 +52,7 @@
                            <i class="bi bi-box-arrow-in-right"></i></span>
                        <span>Login</span></a>
                 @endif
-               </div> --}}
+               </div>
            </div>
        </div>
    </section>
