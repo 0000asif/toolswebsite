@@ -26,7 +26,7 @@
                         {{-- <input type="email" class="form-control" id="inputEmail" placeholder="Enter email"> --}}
                         {{-- ----------  --}}
                         <input placeholder="Enter email" id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email','softcityaa0877@gmail.com') }}" required autocomplete="email" autofocus>
+                            name="email" value="{{ old('email','admin@gmail.com') }}" required autocomplete="email" autofocus>
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                     <div class="mb-3">
                         <label for="inputPassword" class="form-label">Password</label>
                         {{-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> --}}
-                         <input value="nest0877@" placeholder="Enter Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                         <input value="12345678" placeholder="Enter Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
