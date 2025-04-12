@@ -89,8 +89,9 @@
                                     <div class="col-md-3 col-4">
                                         <a href="{{ route('ViewSingleTools', $tool->slug) }}">
                                             <div class="sirajganj_cat_card">
-                                                <img src="{{ asset('public/images/blogs/' . $tool->main_img) }}" alt="img">
-                                                <h2>{{ $tool->title }}</h2>
+                                                <img src="{{ asset('public/images/blogs/' . $tool->main_img) }}"
+                                                    alt="img" style="height: 100px; object-fit: cover;">
+                                                <h5>{{ $tool->title }}</h5>
                                             </div>
                                         </a>
                                     </div>

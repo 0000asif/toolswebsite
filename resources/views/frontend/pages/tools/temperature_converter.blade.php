@@ -14,14 +14,14 @@
     <div class="singlePageBg course-home-section">
 
         @php
-            $tools = App\Models\Blog::where('status', 1)->where('slug', 'age-calculator')->first();
+            $tools = App\Models\Blog::where('status', 1)->where('slug', 'temperature-converter')->first();
         @endphp
 
         <div class="container sirajganj_single_post_container">
             <div class="row mt-3">
                 <div class="col-md-9">
                     <div class="postBody">
-                        <h2 class="postBodyTitle">{{ $tools->title ?? 'Age Calculator' }}</h2>
+                        <h2 class="postBodyTitle">{{ $tools->title ?? 'Temperature Converter' }}</h2>
                     </div>
                     <input type="text" id="toolsID" value="{{ $tools->id }}" hidden>
 
@@ -29,19 +29,35 @@
                     <div class="mainTools">
                         <div class="password_gen text-center">
                             <div class="pass_input">
-                                <input readonly type="text" id="ageOutput" value="">
-                                <span class="strongPassTexta bg-success" id="ageStatus">Ready</span>
+                                <input readonly type="text" id="tempOutput" value="">
+                                <span class="strongPassTexta bg-success" id="tempStatus">Ready</span>
                             </div>
 
                             <div class="pass_btn mt-3">
-                                <button class="copyBtn" id="copyAgeBtn">Copy</button>
-                                <button class="generateBtn" id="calculateAgeBtn">Calculate</button>
+                                <button class="copyBtn" id="copyTempBtn">Copy</button>
+                                <button class="generateBtn" id="convertTempBtn">Convert</button>
                             </div>
 
-                            <div class="row my-3">
-                                <div class="col-md-12">
-                                    <label>Select Date of Birth:</label>
-                                    <input type="date" class="form-control" id="dob">
+                            <div class="row my-4">
+                                <div class="col-md-4">
+                                    <label>Enter Temperature:</label>
+                                    <input type="number" id="tempInput" class="form-control" placeholder="Enter value">
+                                </div>
+                                <div class="col-md-4">
+                                    <label>From:</label>
+                                    <select class="form-control" id="fromUnit">
+                                        <option value="celsius">Celsius (°C)</option>
+                                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                                        <option value="kelvin">Kelvin (K)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>To:</label>
+                                    <select class="form-control" id="toUnit">
+                                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                                        <option value="celsius">Celsius (°C)</option>
+                                        <option value="kelvin">Kelvin (K)</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -133,48 +149,62 @@
 @push('front_js')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.getElementById('calculateAgeBtn').addEventListener('click', function() {
-            const dob = new Date(document.getElementById('dob').value);
-            const today = new Date();
-            const output = document.getElementById('ageOutput');
-            const status = document.getElementById('ageStatus');
+        function convertTemperature(value, from, to) {
+            if (from === to) return value;
 
-            if (!dob || isNaN(dob)) {
+            // Convert to Celsius first
+            let celsius;
+            switch (from) {
+                case "celsius":
+                    celsius = value;
+                    break;
+                case "fahrenheit":
+                    celsius = (value - 32) * 5 / 9;
+                    break;
+                case "kelvin":
+                    celsius = value - 273.15;
+                    break;
+            }
+
+            // Convert from Celsius to target
+            switch (to) {
+                case "celsius":
+                    return celsius;
+                case "fahrenheit":
+                    return (celsius * 9 / 5) + 32;
+                case "kelvin":
+                    return celsius + 273.15;
+            }
+        }
+
+        document.getElementById('convertTempBtn').addEventListener('click', function() {
+            const input = parseFloat(document.getElementById('tempInput').value);
+            const from = document.getElementById('fromUnit').value;
+            const to = document.getElementById('toUnit').value;
+            const output = document.getElementById('tempOutput');
+            const status = document.getElementById('tempStatus');
+
+            if (isNaN(input)) {
                 output.value = '';
-                status.textContent = 'Invalid date';
+                status.textContent = 'Invalid Input';
                 status.classList.replace('bg-success', 'bg-danger');
                 return;
             }
 
-            let years = today.getFullYear() - dob.getFullYear();
-            let months = today.getMonth() - dob.getMonth();
-            let days = today.getDate() - dob.getDate();
-
-            if (days < 0) {
-                months -= 1;
-                days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-            }
-
-            if (months < 0) {
-                years -= 1;
-                months += 12;
-            }
-
-            const result = `${years} Years, ${months} Months, ${days} Days`;
-            output.value = `Age: ${result}`;
-            status.textContent = 'Calculated';
+            const result = convertTemperature(input, from, to).toFixed(2);
+            output.value =
+                `${input} ${from.charAt(0).toUpperCase() + from.slice(1)} = ${result} ${to.charAt(0).toUpperCase() + to.slice(1)}`;
+            status.textContent = 'Converted';
             status.classList.replace('bg-danger', 'bg-success');
         });
 
-        document.getElementById('copyAgeBtn').addEventListener('click', function() {
-            const output = document.getElementById('ageOutput');
+        document.getElementById('copyTempBtn').addEventListener('click', function() {
+            const output = document.getElementById('tempOutput');
             output.select();
-            output.setSelectionRange(0, 99999); // For mobile
+            output.setSelectionRange(0, 99999);
 
             navigator.clipboard.writeText(output.value).then(() => {
-                const status = document.getElementById('ageStatus');
-                status.textContent = 'Copied!';
-                status.classList.replace('bg-danger', 'bg-success');
+                document.getElementById('tempStatus').textContent = 'Copied!';
             });
         });
     </script>

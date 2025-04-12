@@ -134,7 +134,7 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
    
 require __DIR__ . '/frontend.php';
 require __DIR__ . '/profile.php';
-
+require __DIR__ . '/asif.php';
 
 // Privacy Policy & Terms Condition :  'meta_title',
 //         'meta_description',

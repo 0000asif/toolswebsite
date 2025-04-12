@@ -11,229 +11,171 @@
 @endsection --}}
 
 @section('front_content')
-    <style>
-        .accordion {
-            background-color: #333;
-            color: #f1f1f1;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        .accordion-item {
-            border-bottom: 1px solid #444;
-            padding: 15px 0;
-        }
-
-        .accordion-header {
-            display: flex;
-            justify-content: space-between;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
-
-        .toggle-icon {
-            font-size: 1.5em;
-            color: #f39c12;
-            transition: transform 0.3s;
-        }
-
-        .accordion-content {
-            display: none;
-            margin-top: 10px;
-            font-size: 1em;
-            color: #ddd;
-            line-height: 1.6;
-        }
-
-        .accordion-content p {
-            margin: 0;
-        }
-
-        .project-container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-        }
-
-        .project-title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .project-title a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .project-title a:hover {
-            color: #007bff;
-        }
-
-        .details-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .details-row strong {
-            font-weight: 600;
-        }
-
-        .badge-custom {
-            background-color: #007bff;
-            color: white;
-            font-size: 0.9rem;
-            padding: 5px 10px;
-            border-radius: 20px;
-            margin-left: 5px;
-        }
-
-        .project-info {
-            margin-top: 20px;
-        }
-
-        .icon {
-            margin-right: 8px;
-            color: #007bff;
-        }
-
-        .additional-info {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
-        }
-
-        .additional-info p {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        .additional-info i {
-            margin-right: 10px;
-            color: #ff6347;
-        }
-
-        .product-image {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .thumbnail img {
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .thumbnail img:hover {
-            border-color: #ff5722;
-        }
-
-        .img-thumbnail {
-            width: 180px;
-        }
-
-        @media (max-width: 991px) {
-            .img-thumbnail {
-                width: 120px;
-            }
-        }
-
-        @media (max-width: 761px) {
-            .img-thumbnail {
-                width: 100px;
-            }
-        }
-
-        @media (max-width: 556px) {
-            .img-thumbnail {
-                width: 80px;
-            }
-        }
-    </style>
-
     <div class="singlePageBg course-home-section">
+        @php
+            $tools = App\Models\Blog::where('status', 1)->where('slug', 'bmi-calculator')->first();
+        @endphp
 
         <div class="container sirajganj_single_post_container">
             <div class="row mt-3">
-
                 <div class="col-md-9">
                     <div class="postBody">
-                        @php
-                            $tools = App\Models\Blog::where('status', 1)->where('slug', 'bmi-calculator')->first();
-                        @endphp
-                        <h2 class="postBodyTitle">{{ $tools->title ?? '' }}</h2>
+                        <h2 class="postBodyTitle">{{ $tools->title ?? 'BMI Calculator' }}</h2>
                     </div>
-                    {{-- ========== Tools ========= --}}
+                    <input type="text" id="toolsID" value="{{ $tools->id }}" hidden>
+
+                    {{-- ========== Tools Section ========== --}}
                     <div class="mainTools">
-                        <h3>This is tools space</h3>
-                    </div>
-                    {{-- ========= Tools Description =========== --}}
-                    <div class="postBodyDesc">
-                        <p class="postBodyDescText">{!! $tools->description ?? '' !!}</p>
+                        <div class="password_gen text-center">
+                            <div class="pass_input">
+                                <input readonly type="text" id="bmiOutput" value="">
+                                <span class="strongPassTexta bg-success" id="bmiStatus">Ready</span>
+                            </div>
+
+                            <div class="pass_btn mt-3">
+                                <button class="copyBtn" id="copyBmiBtn">Copy</button>
+                                <button class="generateBtn" id="calculateBmiBtn">Calculate</button>
+                            </div>
+
+                            <div class="row my-3">
+                                <div class="col-md-6">
+                                    <label>Height (in cm)</label>
+                                    <input type="number" class="form-control" id="height" value="170">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Weight (in kg)</label>
+                                    <input type="number" class="form-control" id="weight" value="60">
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
+                    {{-- ========= Tools Description =========== --}}
+                    <div class="postBodyDesc">
+                        <h3 class="my-3 text-start">Total View : <span>{{ $tools->view ?? 0 }}</span></h3>
+                    </div>
+
+                    <div class="postBodyDesc mt-5">
+                        <p class="postBodyDescText">{!! $tools->description ?? '' !!}</p>
+                    </div>
                 </div>
 
                 <div class="col-md-3">
                     @include('frontend.components.home_sidebar')
                 </div>
             </div>
+        </div>
+
+
+        <div class="col-md-9">
+            <div class="postBody">
+                @php
+                    $tools = App\Models\Blog::where('status', 1)->where('slug', 'strong-password-generator')->first();
+                @endphp
+                <h2 class="postBodyTitle">{{ $tools->title ?? '' }}</h2>
+            </div>
+            <input type="text" id="toolsID" value="{{ $tools->id }}" hidden>
+            {{-- ========== Tools ========= --}}
+            <div class="mainTools">
+
+                <div class="password_gen text-center">
+                    <div class="pass_input">
+                        <input readonly type="text" id="strongPassInput" value="N8LlMAj7w7kXs51">
+                        <span class="strongPassTexta bg-success" id="strongPassText">Strong</span>
+                    </div>
+                    <div class="pass_btn mt-3">
+                        <button class="copyBtn" id="copyBtn">Copy</button>
+                        <button class="generateBtn" id="generateBtn">Generate</button>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-md-4">
+                            <h3 class="lengthText">Password Length: <span class="lenthDis" id="lengthDisplay">19</span></h3>
+                        </div>
+                        <div class="col-md-7">
+                            <input type="range" class="form-range" id="passwordLength" min="4" max="50"
+                                value="19">
+                        </div>
+                        <div class="col-md-1"></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group mb-3">
+                                <label class="mb-2 d-block charecor">Characters to include:</label>
+                                <div class="d-flex flex-wrap gap-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="uppercase" checked>
+                                        <label class="form-check-label" for="uppercase">Uppercase (A-Z)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="lowercase" checked>
+                                        <label class="form-check-label" for="lowercase">Lowercase (a-z)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="numbers" checked>
+                                        <label class="form-check-label" for="numbers">Numbers (0-9)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="specials">
+                                        <label class="form-check-label" for="specials">Specials (!@#$...)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {{-- ========= Tools Description =========== --}}
+            <div class="postBodyDesc ">
+                <p class="postBodyDescText">
+                <h3 class="my-3 text-start">Total View : <span class="">{{ $tools->view ?? 0 }}</span></h3>
+                </p>
+            </div>
+
+            {{-- ========= Tools Description =========== --}}
+            <div class="postBodyDesc mt-5">
+                <p class="postBodyDescText">{!! $tools->description ?? '' !!}</p>
+            </div>
 
         </div>
 
-        <div class="course-home-section related_post">
+        <div class="col-md-3">
+            @include('frontend.components.home_sidebar')
+        </div>
+    </div>
 
-            <div class="container sirajganj_related_view">
+    </div>
 
-                <span id="allInfoContent">
-                    <div class="container my-4 sirajganj_related_container">
-                        <div class="row py-3 sirajganj_related_row">
-                            <h4>রিলেটেড তথ্য </h4>
-                            <div class="head d-flex justify-content-center">
-                                <!-- <h1 class="head1 text-white">সকল পোস্ট </h1> -->
-                                <a href="" class="sirajganj_btn-primary">সকল তথ্য ➜ </a>
-                            </div>
+    <div class="course-home-section related_post">
+
+        <div class="container sirajganj_related_view">
+
+            <span id="allInfoContent">
+                <div class="container my-4 sirajganj_related_container">
+                    <div class="row py-3 sirajganj_related_row">
+                        <h4>রিলেটেড তথ্য </h4>
+                        <div class="head d-flex justify-content-center">
+                            <!-- <h1 class="head1 text-white">সকল পোস্ট </h1> -->
+                            <a href="" class="sirajganj_btn-primary">সকল তথ্য ➜ </a>
                         </div>
-
                     </div>
 
-                </span>
+                </div>
 
-                <div id="preloader" style="display: none;">
-                    <div class="spinner-border text-primary" role="status">
-                        <span class="sr-only">Loading...</span>
-                    </div>
+            </span>
+
+            <div id="preloader" style="display: none;">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
 
-    {{-- =========================== Modal Section ===========================  --}}
-
-
-    {{-- =========================== Modal Section ===========================  --}}
-    @if (Session::has('success'))
-        <script>
-            // Swal.fire({
-            //     title: "Success!",
-            //     text: "{{ Session::get('success') }}",
-            //     icon: "success",
-            //     confirmButtonText: "OK"
-            // });
-            alert();
-        </script>
-    @endif
     <script>
         function changeImage(element) {
             var mainImage = document.getElementById('mainImage');
@@ -274,18 +216,50 @@
 @endsection
 
 @push('front_js')
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.getElementById('calculateBmiBtn').addEventListener('click', function() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            const output = document.getElementById('bmiOutput');
+            const status = document.getElementById('bmiStatus');
 
-    @if (Session::has('success'))
-        <script>
-            alert();
-            Swal.fire({
-                title: "Success!",
-                text: "{{ Session::get('success') }}",
-                icon: "success",
-                confirmButtonText: "OK"
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                status.textContent = 'Invalid input';
+                status.classList.replace('bg-success', 'bg-danger');
+                output.value = '';
+                return;
+            }
+
+            const heightInMeters = height / 100;
+            const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(2);
+            let bmiStatus = '';
+
+            if (bmi < 18.5) {
+                bmiStatus = 'Underweight';
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                bmiStatus = 'Normal weight';
+            } else if (bmi >= 25 && bmi < 29.9) {
+                bmiStatus = 'Overweight';
+            } else {
+                bmiStatus = 'Obese';
+            }
+
+            output.value = `BMI: ${bmi}`;
+            status.textContent = bmiStatus;
+            status.classList.replace('bg-danger', 'bg-success');
+        });
+
+        document.getElementById('copyBmiBtn').addEventListener('click', function() {
+            const output = document.getElementById('bmiOutput');
+            output.select();
+            output.setSelectionRange(0, 99999); // for mobile
+
+            navigator.clipboard.writeText(output.value).then(() => {
+                const status = document.getElementById('bmiStatus');
+                status.textContent = 'Copied!';
+                status.classList.replace('bg-danger', 'bg-success');
             });
-        </script>
-    @endif
-
-
+        });
+    </script>
 @endpush

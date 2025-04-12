@@ -24,6 +24,18 @@ class ToolsController extends Controller
         if($slug == 'strong-password-generator'){
             $type = 'password_generator';
         }
+        if($slug == 'random-number-generator'){
+            $type = 'random_number';
+        }
+        if($slug == 'temperature-converter'){
+            $type = 'temperature';
+        }
+        if($slug == 'unit-converter'){
+            $type = 'unit';
+        }
+        if($slug == 'text-counter'){
+            $type = 'text_counter';
+        }
 
         return view('frontend.pages.singleTools', compact('relatedBlogs','type'));
     }

@@ -45,7 +45,7 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form action="{{ route('tools.update', $blog ? $blog->id : '') }}" method="Tools"
+                                    <form action="{{ route('tools.update',$blog->id) }}" method="post"
                                         enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT') <!-- Include method for PUT -->
