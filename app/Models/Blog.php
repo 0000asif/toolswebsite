@@ -29,6 +29,7 @@ class Blog extends Model
         'meta_keywords',
         'view',
         'alt_text',
+        'used_count'
     ];
 
     /**

@@ -2,8 +2,8 @@
 <header id="header" class="header sticky-top bg-light shadow-sm">
     <div class="container container-xl d-flex align-items-center justify-content-between">
         <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <h3 class="mb-0 fw-bold">Best Tools</h3>
+        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+            <h3 class="mb-0 fw-bold">SoftNestTools</h3>
         </a>
 
         <!-- Navbar -->

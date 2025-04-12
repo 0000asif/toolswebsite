@@ -11,7 +11,6 @@
 @endsection --}}
 
 @section('front_content')
-
     <div class="singlePageBg course-home-section">
 
         <div class="container sirajganj_single_post_container">
@@ -20,35 +19,71 @@
                 <div class="col-md-9">
                     <div class="postBody">
                         @php
-                            $tools = App\Models\Blog::where('status', 1)->where('slug', 'strong-password-generator')->first();
+                            $tools = App\Models\Blog::where('status', 1)
+                                ->where('slug', 'strong-password-generator')
+                                ->first();
                         @endphp
                         <h2 class="postBodyTitle">{{ $tools->title ?? '' }}</h2>
                     </div>
+                    <input type="text" id="toolsID" value="{{ $tools->id }}" hidden>
                     {{-- ========== Tools ========= --}}
                     <div class="mainTools">
 
                         <div class="password_gen text-center">
-                           <div class="pass_input">
-                              <input readonly type="text" id="strongPassInput" value="N8LlMAj7w7kXs51">
-                              <span class="strongPassTexta bg-success" id="strongPassText">Strong</span>
-                           </div>
-                           <div class="pass_btn mt-3">
-                              <button class="copyBtn" id="copyBtn">Copy</button>
-                              <button class="generateBtn" id="generateBtn">Generate</button>
-                           </div>
-                           <div class="row">
-                              <div class="col-md-4">
-                                 Password length:
-                              </div>
-                              <div class="col-md-8">
-                                 
-                              </div>
-                           </div>
+                            <div class="pass_input">
+                                <input readonly type="text" id="strongPassInput" value="N8LlMAj7w7kXs51">
+                                <span class="strongPassTexta bg-success" id="strongPassText">Strong</span>
+                            </div>
+                            <div class="pass_btn mt-3">
+                                <button class="copyBtn" id="copyBtn">Copy</button>
+                                <button class="generateBtn" id="generateBtn">Generate</button>
+                            </div>
+                            <div class="row my-3">
+                                <div class="col-md-4">
+                                    <h3 class="lengthText">Password Length: <span class="lenthDis" id="lengthDisplay">19</span></h3>
+                                </div>
+                             <div class="col-md-7">
+                                    <input type="range" class="form-range" id="passwordLength" min="4" max="50" value="19">
+                             </div>
+                             <div class="col-md-1"></div>
 
-                    </div>
+                            </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mb-3">
+                                    <label class="mb-2 d-block charecor">Characters to include:</label>
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="uppercase" checked>
+                                            <label class="form-check-label" for="uppercase">Uppercase (A-Z)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="lowercase" checked>
+                                            <label class="form-check-label" for="lowercase">Lowercase (a-z)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="numbers" checked>
+                                            <label class="form-check-label" for="numbers">Numbers (0-9)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="specials">
+                                            <label class="form-check-label" for="specials">Specials (!@#$...)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+
+                        </div>
                     </div>
                     {{-- ========= Tools Description =========== --}}
-                    <div class="postBodyDesc">
+                    <div class="postBodyDesc ">
+                        <p class="postBodyDescText">  <h3 class="my-3 text-start">Total View : <span class="">{{ $tools->view ?? 0 }}</span></h3></p>
+                    </div>
+
+                    {{-- ========= Tools Description =========== --}}
+                    <div class="postBodyDesc mt-5">
                         <p class="postBodyDescText">{!! $tools->description ?? '' !!}</p>
                     </div>
 
@@ -130,17 +165,73 @@
 
 @push('front_js')
 
-    @if (Session::has('success'))
-        <script>
-            alert();
-            Swal.fire({
-                title: "Success!",
-                text: "{{ Session::get('success') }}",
-                icon: "success",
-                confirmButtonText: "OK"
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function generatePassword(length, useUpper, useLower, useNumbers, useSpecials) {
+        let charset = "";
+        if (useUpper) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (useLower) charset += "abcdefghijklmnopqrstuvwxyz";
+        if (useNumbers) charset += "0123456789";
+        if (useSpecials) charset += "!@#$%^&*()_+{}[]|:;<>,.?/~`-=";
+
+        if (charset.length === 0) {
+            alert("Please select at least one character set!");
+            return "";
+        }
+
+        let password = "";
+        for (let i = 0; i < length; i++) {
+            const randomIndex = Math.floor(Math.random() * charset.length);
+            password += charset[randomIndex];
+        }
+        return password;
+    }
+
+    $(document).ready(function () {
+        // Display slider value
+        $('#passwordLength').on('input', function () {
+            $('#lengthDisplay').text($(this).val());
+        });
+
+     // Generate button click
+            $('#generateBtn').click(function () {
+                const length = parseInt($('#passwordLength').val());
+                const useUpper = $('#uppercase').is(':checked');
+                const useLower = $('#lowercase').is(':checked');
+                const useNumbers = $('#numbers').is(':checked');
+                const useSpecials = $('#specials').is(':checked');
+
+                const password = generatePassword(length, useUpper, useLower, useNumbers, useSpecials);
+                $('#strongPassInput').val(password);
+
+                const toolsID = $('#toolsID').val(); 
+
+                $.ajax({
+                    url: "{{ route('ToolsUsedCount') }}", // Laravel route
+                    type: "GET",
+                    data: {
+                        toolsID: toolsID,
+                    },
+                    success: function (response) {
+                        console.log("Password saved successfully:", response);
+                    },
+                    error: function (error) {
+                        console.error("Error saving password:", error);
+                    }
+                });
             });
-        </script>
-    @endif
+
+
+        // Copy button
+        $('#copyBtn').click(function () {
+            const password = $('#strongPassInput').val();
+            navigator.clipboard.writeText(password).then(function () {
+                alert("Password copied to clipboard!");
+            });
+        });
+    });
+</script>
+
 
 
 @endpush

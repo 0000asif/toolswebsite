@@ -37,6 +37,8 @@ Route::get('/', [FrontendController::class, 'home'])->name('frontHome');
 // View Tools 
 Route::get('/tool/{slug}', [ToolsController::class, 'ViewSingleTools'])->name('ViewSingleTools');
 
+// Tools Used Count 
+Route::get('tools-used-count', [ToolsController::class, 'ToolsUsedCount'])->name('ToolsUsedCount');
 
 Route::get('/category/{slug}', [FrontendController::class, 'category_view'])->name('frontCategory');
 Route::get('/subcategory/{slug}', [FrontendController::class, 'subcategory_view'])->name('frontSubCategory');
