@@ -61,6 +61,14 @@ class ToolsController extends Controller
             $type = 'clothe_animal_emoji';
         }
 
+
+        // ---------- Game ------------------
+        if($slug == 'online-guessing-game'){
+            $type = 'guessing_game';
+        }
+        if($slug == 'online-snake-game'){
+            $type = 'snake_game';
+        }
         return view('frontend.pages.singleTools', compact('relatedBlogs','type'));
     }
 

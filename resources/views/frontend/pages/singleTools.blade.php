@@ -39,6 +39,12 @@
     @case('average')
         @include('frontend.pages.tools.average_calculator')
     @break
+    @case('guessing_game')
+        @include('frontend.pages.game.gussing_game')
+    @break
+    @case('snake_game')
+        @include('frontend.pages.game.snake_game')
+    @break
     @case('grade')
         @include('frontend.pages.tools.grade_calculator')
 

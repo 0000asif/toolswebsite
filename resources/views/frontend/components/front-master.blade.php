@@ -54,6 +54,7 @@
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/style.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/asif.css">
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/tools.css">
+    <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/game.css">
 
 
     <link rel="stylesheet" href="{{ asset('frontend') }}/assets/css/custom.css">
