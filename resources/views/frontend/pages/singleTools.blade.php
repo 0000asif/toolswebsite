@@ -12,16 +12,26 @@
     @break
 
     @case('random_number')
-        @include('frontend.pages.single_tools.random_number_generator')
+        @include('frontend.pages.tools.random_number_generator')
     @break
     @case('temperature')
         @include('frontend.pages.tools.temperature_converter')
     @break
     @case('unit')
-        @include('frontend.pages.single_tools.unitconverter')
+        @include('frontend.pages.tools.unitconverter')
     @break
     @case('text_counter')
-        @include('frontend.pages.single_tools.textcounter')
+        @include('frontend.pages.tools.textcounter')
+    @break
+    @case('smileys_copy_emoji')
+        @include('frontend.pages.tools.smileys_copy_emoji')
+    @break
+    @case('pale_copy_emoji')
+        @include('frontend.pages.tools.pale_bodyparts_emoji')
+    @break
+
+    @case('clothe_animal_emoji')
+        @include('frontend.pages.tools.clothe_animal_emoji')
     @break
     @case('percentage')
         @include('frontend.pages.tools.percentage_calculator')

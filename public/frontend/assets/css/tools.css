@@ -1,3 +1,11 @@
+.padding_zero {
+   padding: 0px !important;
+}
+.margin_zero {
+   margin: 0px !important;
+}
+
+
 .pass_input {
    display: flex;
    width: 100%;
@@ -148,4 +156,92 @@ label.form-check-label {
 .charecor {
    font-size: 18px;
    margin: 10px 0;
+}
+
+
+/* ========================= Emoji CSS ============================  */
+.flex {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 0.5rem;
+}
+
+/* Emoji Container */
+.softEmoji {
+   transform: translateZ(0);
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   font-family: Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, Android Emoji, EmojiSymbols, EmojiOne Mozilla, Twemoji Mozilla, Segoe UI Symbol, Noto Color Emoji, EmojiOne Color, emoji, var(--font-noto-emojipedia-fallback);
+}
+
+/* Emoji Button */
+.softEmoji-button {
+   margin: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 4.5rem;
+   width: 4.5rem;
+   font-size: 2.5rem;
+   background: #fff;
+   border: 1px solid #d8d8d8;
+   border-radius: 8px;
+   cursor: pointer;
+   padding: 1rem;
+   transition: background-color 0.2s ease-in-out;
+}
+
+@media (min-width: 600px) {
+   .softEmoji-button {
+      height: 5rem;
+      width: 5rem;
+      font-size: 3rem;
+   }
+}
+
+@media (min-width: 900px) {
+   .softEmoji-button:hover {
+      background-color: #34a852;
+   }
+}
+
+/* Copied Text */
+.softEmoji-copied-text {
+   position: absolute;
+   top: -2.5rem;
+   background-color: #fff;
+   border: 1px solid #d8d8d8;
+   padding: 0.75rem;
+   font-size: 0.75rem;
+   font-weight: 600;
+   color: #34a852;
+   border-radius: 4px;
+   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);
+}
+
+/* Container Padding Fix */
+.padding_zero {
+   padding: 0 !important;
+}
+
+@media (max-width: 600px) {
+   .softEmoji-button {
+      height: 3.5rem;
+      width: 3.5rem;
+      font-size: 2rem;
+   }
+}
+#copied-alert {
+   display: none;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background: #4caf50;
+   color: white;
+   padding: 0.5rem 1rem;
+   border-radius: 5px;
+   z-index: 9999;
 }
