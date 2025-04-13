@@ -23,6 +23,14 @@
     @case('text_counter')
         @include('frontend.pages.single_tools.textcounter')
     @break
+    @case('percentage')
+        @include('frontend.pages.tools.percentage_calculator')
+    @break
+    @case('average')
+        @include('frontend.pages.tools.average_calculator')
+    @break
+    @case('grade')
+        @include('frontend.pages.tools.grade_calculator')
 
     @default
         <p>Select a tool to view.</p>

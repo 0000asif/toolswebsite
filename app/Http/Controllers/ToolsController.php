@@ -36,6 +36,18 @@ class ToolsController extends Controller
         if($slug == 'text-counter'){
             $type = 'text_counter';
         }
+        if($slug == 'percentage-calculator')
+        {
+            $type = 'percentage';
+        }
+        if($slug == 'average-calculator')
+        {
+            $type = 'average';
+        }
+        if($slug == 'grade-calculator')
+        {
+            $type = 'grade';
+        }
 
         return view('frontend.pages.singleTools', compact('relatedBlogs','type'));
     }
