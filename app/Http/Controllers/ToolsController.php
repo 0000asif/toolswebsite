@@ -37,6 +37,18 @@ class ToolsController extends Controller
             $type = 'text_counter';
         }
 
+        if($slug == 'smileys-emoji-copy'){
+            $type = 'smileys_copy_emoji';
+        }
+
+        if($slug == 'pale-and-body-part-emoji'){
+            $type = 'pale_copy_emoji';
+        }
+
+        if($slug == 'clothing-animals-nature-emoji-copy'){
+            $type = 'clothe_animal_emoji';
+        }
+
         return view('frontend.pages.singleTools', compact('relatedBlogs','type'));
     }
 
