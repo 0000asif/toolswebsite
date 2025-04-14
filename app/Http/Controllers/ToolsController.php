@@ -61,6 +61,18 @@ class ToolsController extends Controller
             $type = 'clothe_animal_emoji';
         }
 
+        if($slug == 'food-activity-sport-emoji-copy'){
+            $type = 'food_sport_emoji';
+        }
+
+        if($slug == 'travel-place-objects-emoji-copy'){
+            $type = 'travel_object_emoji';
+        }
+
+        if($slug == 'text-symbol-copy-paste-online'){
+            $type = 'symbol_copy_paste';    
+        }
+
 
         // ---------- Game ------------------
         if($slug == 'online-guessing-game'){

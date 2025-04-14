@@ -33,6 +33,20 @@
     @case('clothe_animal_emoji')
         @include('frontend.pages.tools.clothe_animal_emoji')
     @break
+
+    @case('food_sport_emoji')
+        @include('frontend.pages.tools.food_sport_emoji')
+    @break
+
+    @case('travel_object_emoji')
+        @include('frontend.pages.tools.travel_object_emoji')
+    @break
+
+    @case('symbol_copy_paste')
+        @include('frontend.pages.tools.symble_copy_pase')
+    @break
+
+
     @case('percentage')
         @include('frontend.pages.tools.percentage_calculator')
     @break
