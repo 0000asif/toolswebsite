@@ -434,3 +434,193 @@ ul {
    -moz-border-radius: 5px;
    -webkit-border-radius: 5px
 }
+
+
+/* ========================== English Calendar =====================  */
+
+       .calc-container {
+          max-width: 400px;
+          margin: 0 auto;
+          background-color: #f8f9fa;
+          border-radius: 15px;
+          padding: 20px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+       }
+   
+       .calc-display {
+          background-color: #ffffff;
+          border: 1px solid #dee2e6;
+          border-radius: 8px;
+          padding: 15px;
+          margin-bottom: 20px;
+          text-align: right;
+          font-size: 2rem;
+          height: 80px;
+          overflow: hidden;
+       }
+   
+       .calc-btn {
+          width: 100%;
+          height: 60px;
+          font-size: 1.2rem;
+          border-radius: 8px;
+          border: none;
+          margin: 5px 0;
+          transition: all 0.2s;
+       }
+   
+       .calc-btn-num {
+          background-color: #ffffff;
+          color: #333;
+       }
+   
+       .calc-btn-num:hover {
+          background-color: #e9ecef;
+       }
+   
+       .calc-btn-operator {
+          background-color: #f0ad4e;
+          color: white;
+       }
+   
+       .calc-btn-operator:hover {
+          background-color: #ec971f;
+       }
+   
+       .calc-btn-clear {
+          background-color: #d9534f;
+          color: white;
+       }
+   
+       .calc-btn-clear:hover {
+          background-color: #c9302c;
+       }
+   
+       .calc-btn-equal {
+          background-color: #5cb85c;
+          color: white;
+       }
+   
+       .calc-btn-equal:hover {
+          background-color: #449d44;
+       }
+   
+       .calc-btn:active {
+          transform: scale(0.95);
+       }
+
+       /* =================== scientific_calculator ====================  */
+
+             /* Main container styles */
+             .calculator-container {
+                width: 100%;
+                background-color: #2c3e50;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+             }
+      
+             /* Display area styles */
+             .calculator-display {
+                background-color: #ecf0f1;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 20px;
+                text-align: right;
+                font-size: 1.8em;
+                height: 60px;
+                overflow: hidden;
+             }
+      
+             /* Mode buttons row */
+             .calculator-mode-buttons {
+                display: flex;
+                gap: 5px;
+                margin-bottom: 10px;
+             }
+      
+             /* Main buttons grid */
+             .calculator-buttons-grid {
+                display: grid;
+                grid-template-columns: repeat(9, 1fr);
+                grid-gap: 5px;
+             }
+      
+             /* Base button styles */
+             .calc-btn {
+                border: none;
+                border-radius: 5px;
+                padding: 10px 0;
+                font-size: 1em;
+                cursor: pointer;
+                transition: all 0.2s;
+             }
+      
+             /* Button type variations */
+             .calc-btn-mode {
+                background-color: #3498db;
+                color: white;
+                flex: 1;
+             }
+      
+             .calc-btn-clear {
+                background-color: #e74c3c;
+                color: white;
+                flex: 2;
+             }
+      
+             .calc-btn-number {
+                background-color: #34495e;
+                color: white;
+             }
+      
+             .calc-btn-operation {
+                background-color: #16a085;
+                color: white;
+             }
+      
+             .calc-btn-function {
+                background-color: #8e44ad;
+                color: white;
+             }
+      
+             .calc-btn-constant {
+                background-color: #f39c12;
+                color: white;
+             }
+      
+             .calc-btn-variable {
+                background-color: #27ae60;
+                color: white;
+             }
+      
+             .calc-btn-navigation {
+                background-color: #7f8c8d;
+                color: white;
+             }
+      
+             .calc-btn-parenthesis {
+                background-color: #d35400;
+                color: white;
+             }
+      
+             .calc-btn-separator {
+                background-color: #95a5a6;
+                color: white;
+             }
+      
+             .calc-btn-decimal {
+                background-color: #34495e;
+                color: white;
+             }
+      
+             .calc-btn-answer {
+                background-color: #2980b9;
+                color: white;
+             }
+      
+             /* Hover effects */
+             .calc-btn:hover {
+                opacity: 0.8;
+                transform: scale(0.98);
+             }

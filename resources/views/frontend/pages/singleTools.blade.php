@@ -46,6 +46,18 @@
         @include('frontend.pages.tools.symble_copy_pase')
     @break
 
+    @case('english_calendar')
+        @include('frontend.pages.tools.english_calendar')
+    @break
+
+    @case('math_calculator')
+        @include('frontend.pages.tools.math_calculator')
+    @break
+
+    @case('scientific_calculator')
+        @include('frontend.pages.tools.scientific_calculator')
+    @break
+
     @case('function_symbols')
         @include('frontend.pages.tools.function_pro_symblols')
     @break

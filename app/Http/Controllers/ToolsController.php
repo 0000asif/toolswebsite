@@ -81,6 +81,17 @@ class ToolsController extends Controller
             $type = 'popular_symbols';    
         }
 
+        if($slug == 'year-2025-calendar-bangladesh'){
+            $type = 'english_calendar';    
+        }
+
+        if($slug == 'scientific-calculator-online'){
+            $type = 'scientific_calculator';    
+        }
+
+        if($slug == 'online-math-calculator'){
+            $type = 'math_calculator';    
+        }
 
         // ---------- Game ------------------
         if($slug == 'online-guessing-game'){
