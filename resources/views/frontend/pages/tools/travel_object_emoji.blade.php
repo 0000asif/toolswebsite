@@ -496,7 +496,6 @@
 @endsection
 
 @push('front_js')
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
   document.querySelectorAll('.softEmoji-button').forEach(button => {
     button.addEventListener('click', () => {

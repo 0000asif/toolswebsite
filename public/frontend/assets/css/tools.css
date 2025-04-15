@@ -245,3 +245,192 @@ label.form-check-label {
    border-radius: 5px;
    z-index: 9999;
 }
+
+
+/* ===================== Symbols CSS ===================== */
+
+.symbols-types a:hover {
+   background: #000b14;
+   color: #fff
+}
+
+.symbolslist {
+   margin: 15px 0;
+   text-align: center;
+   padding: 0 5px
+}
+
+.symbolslist a {
+   margin: .3rem .2rem;
+   color: #fff;
+   background-color: #000b14;
+   cursor: pointer;
+   line-height: 1.6;
+   padding: 7px 10px;
+   text-align: center;
+   white-space: nowrap;
+   border-radius: 5px;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   display: inline-flex;
+   font-size: 1.1rem
+}
+
+ul {
+   list-style-type: none;
+   box-sizing: border-box;
+   padding: 0 !important
+}
+
+.softnesttools_symbols {
+   position: relative;
+   background-color: #fff;
+   display: inline-block;
+   margin: .5rem .2rem;
+   border: 1px solid #fff;
+   border-radius: 4px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   -o-border-radius: 4px;
+   -khtml-border-radius: 4px;
+   padding: 5px;
+}
+
+.resp-sharing-button--email,
+.resp-sharing-button--facebook,
+.resp-sharing-button--tumblr,
+.resp-sharing-button--twitter,
+.resp-sharing-button--whatsapp {
+   border-color: #1a1a1a;
+   background-color: #1a1a1a
+}
+
+.softnesttools_symbols:hover {
+   border: 1px solid #000b14;
+   background: rgba(0, 0, 255, 0.486);
+   color: #fff;
+}
+
+.softnesttools_symbols_copy {
+   background: #fff;
+   display: block;
+   border-radius: 4px;
+   -webkit-border-radius: 4px;
+   -moz-border-radius: 4px;
+   -o-border-radius: 4px;
+   -khtml-border-radius: 4px;
+   padding: 1px;
+   min-width: 62px;
+   min-height: 31px;
+   line-height: 1.1;
+   font-family: Inter !important;
+   font-size: 4.1rem;
+   vertical-align: middle;
+   overflow: hidden;
+   justify-content: center
+}
+
+.softnesttools_symbols_copy:hover {
+   color: #000b14
+}
+
+
+@media only screen and (min-width: 1100px) {
+   .tier1 {
+      flex: 0 0 auto;
+      width: 68%;
+      margin: 1%;
+      text-align: center
+   }
+
+   .tier2 {
+      flex: 0 0 auto;
+      width: 28%;
+      margin: 1%
+   }
+}
+
+@media only screen and (max-width: 1099px) {
+   .tier1 {
+      width: 100%;
+      text-align: center
+   }
+
+   .tier2 {
+      display: none
+   }
+
+   .inputboxarea {
+      padding-top: 0;
+      padding-bottom: 6px
+   }
+
+   #recentclicksymbols .softnesttools_symbols_copy {
+      margin-left: 2px;
+      margin-right: 2px;
+      margin-top: 3px
+   }
+
+   #inputbox {
+      font-size: 20px
+   }
+}
+
+@media (max-width: 480px) {
+   .myads1 {
+      width: 320px;
+      height: 50px
+   }
+
+   .myads2 {
+      width: 300px;
+      height: 50px
+   }
+}
+
+@media (min-width: 481px) and (max-width:1024px) {
+   .myads1 {
+      width: 468px;
+      height: 60px
+   }
+
+   .myads2 {
+      width: 480px;
+      height: 320px
+   }
+}
+
+@media (min-width: 1025px) {
+   .myads1 {
+      width: 728px;
+      height: 90px
+   }
+
+   .myads2 {
+      width: 640px;
+      height: 100px
+   }
+}
+.symbols-types a,
+.softnesttools_symbols_copy {
+   color: #04070c;
+   cursor: pointer;
+   text-align: center
+}
+
+.symbol-name {
+   font-size: 10px;
+   text-align: center;
+}
+
+.symbols-types {
+   margin: 2rem 0;
+   text-align: center;
+   padding: 0 5px
+}
+
+.symbols-types a {
+   background-color: #fff;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px
+}

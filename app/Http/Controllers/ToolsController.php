@@ -73,6 +73,14 @@ class ToolsController extends Controller
             $type = 'symbol_copy_paste';    
         }
 
+        if($slug == 'fraction-punctuation-symbols-copy'){
+            $type = 'function_symbols';    
+        }
+
+        if($slug == 'popular-symbols-emoji-icon-copy-and-paste'){
+            $type = 'popular_symbols';    
+        }
+
 
         // ---------- Game ------------------
         if($slug == 'online-guessing-game'){

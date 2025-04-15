@@ -46,6 +46,13 @@
         @include('frontend.pages.tools.symble_copy_pase')
     @break
 
+    @case('function_symbols')
+        @include('frontend.pages.tools.function_pro_symblols')
+    @break
+
+    @case('popular_symbols')
+        @include('frontend.pages.tools.popular_symbols')
+    @break
 
     @case('percentage')
         @include('frontend.pages.tools.percentage_calculator')
