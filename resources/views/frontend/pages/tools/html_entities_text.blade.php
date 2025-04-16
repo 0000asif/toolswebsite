@@ -13,38 +13,46 @@
 @section('front_content')
     <div class="singlePageBg course-home-section">
 
+
         @php
-            $tools = App\Models\Blog::where('status', 1)->where('slug', 'grade-calculator')->first();
+            $tools = App\Models\Blog::where('status', 1)->where('slug', 'html-entities-to-text-converter')->first();
         @endphp
 
         <div class="container sirajganj_single_post_container">
             <div class="row mt-3">
                 <div class="col-md-9">
                     <div class="postBody">
-                        <h2 class="postBodyTitle">{{ $tools->title ?? 'Grade Calculator' }}</h2>
+                        <h2 class="postBodyTitle">{{ $tools->title ?? 'HTML Entities Converter' }}</h2>
                     </div>
                     <input type="text" id="toolsID" value="{{ $tools->id }}" hidden>
 
-                    {{-- ========== Grade Calculator ========== --}}
+                    {{-- ========== Tool Section ========== --}}
                     <div class="mainTools">
                         <div class="password_gen text-center">
+
+                            {{-- HTML ENTITIES TO TEXT --}}
                             <div class="form-group mb-3">
-                                <label for="marksList">Enter subject marks separated by commas (e.g., 85, 90, 78):</label>
-                                <textarea class="form-control mt-2" id="marksList" rows="3" placeholder="85, 90, 78, 88, 95"></textarea>
+                                <label for="entityInput">HTML Entities to Text:</label>
+                                <textarea class="form-control mt-2" id="entityInput" rows="3"
+                                    placeholder="Enter HTML entities (e.g. &lt;div&gt;Hello&lt;/div&gt;)"></textarea>
+                            </div>
+                            <div class="pass_btn mt-2">
+                                <button class="generateBtn" id="convertToText">Convert</button>
+                            </div>
+                            <div class="form-group mt-2">
+                                <textarea class="form-control mt-2" id="textOutput" rows="3" readonly placeholder="<div>Hello</div>"></textarea>
+                            </div>
+                            <div class="pass_btn mt-2">
+                                <button class="copyBtn" id="copyText">Copy</button>
+                                <span class="text-success d-none" id="textCopyStatus">Copied!</span>
                             </div>
 
-                            <button class="generateBtn mt-2" id="calculateGradeBtn">Calculate Grade</button>
-
-                            <div class="mt-3">
-                                <h4>Average Score: <span id="averageScore">0</span></h4>
-                                <h4>Grade: <span id="gradeResult">-</span></h4>
-                            </div>
                         </div>
                     </div>
 
-                    {{-- ========= Description ========= --}}
-                    <div class="postBodyDesc">
-                        <h3 class="my-3 text-start">Total View : <span>{{ $tools->view ?? 0 }}</span></h3>
+                    {{-- ========= Tool Description ========= --}}
+                    <div class="postBodyDesc mt-4">
+                        <h3 class="text-start">Total View : <span>{{ $tools->view ?? 0 }}</span></h3>
                     </div>
                     <div class="postBodyDesc mt-5">
                         <p class="postBodyDescText">{!! $tools->description ?? '' !!}</p>
@@ -56,6 +64,8 @@
                 </div>
             </div>
         </div>
+
+
 
 
         <div class="course-home-section related_post">
@@ -128,29 +138,30 @@
 @push('front_js')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.getElementById('calculateGradeBtn').addEventListener('click', function() {
-            const input = document.getElementById('marksList').value;
-            const marks = input.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
-
-            if (marks.length > 0) {
-                const total = marks.reduce((a, b) => a + b, 0);
-                const avg = total / marks.length;
-                document.getElementById('averageScore').innerText = avg.toFixed(2);
-                document.getElementById('gradeResult').innerText = getGrade(avg);
-            } else {
-                document.getElementById('averageScore').innerText = "0";
-                document.getElementById('gradeResult').innerText = "-";
-            }
+        // Convert HTML Entities to Text
+        document.getElementById('convertToText').addEventListener('click', () => {
+            const input = document.getElementById('entityInput').value;
+            const textarea = document.createElement('textarea');
+            textarea.innerHTML = input;
+            document.getElementById('textOutput').value = textarea.value;
         });
 
-        function getGrade(avg) {
-            if (avg >= 80) return "A+";
-            else if (avg >= 70) return "A";
-            else if (avg >= 60) return "A-";
-            else if (avg >= 50) return "B";
-            else if (avg >= 40) return "C";
-            else if (avg >= 33) return "D";
-            else return "F";
-        }
+        // Convert HTML Entities to Text
+        document.getElementById('entityInput').addEventListener('keyup', () => {
+            const input = document.getElementById('entityInput').value;
+            const textarea = document.createElement('textarea');
+            textarea.innerHTML = input;
+            document.getElementById('textOutput').value = textarea.value;
+        });
+
+        // Copy Text Output
+        document.getElementById('copyText').addEventListener('click', () => {
+            const output = document.getElementById('textOutput');
+            output.select();
+            document.execCommand('copy');
+            const status = document.getElementById('textCopyStatus');
+            status.classList.remove('d-none');
+            setTimeout(() => status.classList.add('d-none'), 1000);
+        });
     </script>
 @endpush

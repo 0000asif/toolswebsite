@@ -14,30 +14,37 @@
     <div class="singlePageBg course-home-section">
 
         @php
-            $tools = App\Models\Blog::where('status', 1)->where('slug', 'grade-calculator')->first();
+            $tools = App\Models\Blog::where('status', 1)->where('slug', 'lowercase-to-uppercase')->first();
         @endphp
 
         <div class="container sirajganj_single_post_container">
             <div class="row mt-3">
                 <div class="col-md-9">
                     <div class="postBody">
-                        <h2 class="postBodyTitle">{{ $tools->title ?? 'Grade Calculator' }}</h2>
+                        <h2 class="postBodyTitle">{{ $tools->title ?? 'Uppercase to Lowercase Converter' }}</h2>
                     </div>
                     <input type="text" id="toolsID" value="{{ $tools->id }}" hidden>
 
-                    {{-- ========== Grade Calculator ========== --}}
+                    {{-- ========== Tool ========== --}}
                     <div class="mainTools">
                         <div class="password_gen text-center">
                             <div class="form-group mb-3">
-                                <label for="marksList">Enter subject marks separated by commas (e.g., 85, 90, 78):</label>
-                                <textarea class="form-control mt-2" id="marksList" rows="3" placeholder="85, 90, 78, 88, 95"></textarea>
+                                <label for="lowercaseInput">Enter Text in Lowercase:</label>
+                                <textarea class="form-control mt-2" id="lowercaseInput" rows="4" placeholder="hello world"></textarea>
                             </div>
 
-                            <button class="generateBtn mt-2" id="calculateGradeBtn">Calculate Grade</button>
+                            <div class="pass_btn mt-2">
+                                <button class="generateBtn" id="convertUppercaseBtn">Convert to UpperCase</button>
+                            </div>
 
-                            <div class="mt-3">
-                                <h4>Average Score: <span id="averageScore">0</span></h4>
-                                <h4>Grade: <span id="gradeResult">-</span></h4>
+                            <div class="form-group mt-4">
+                                <label for="uppercaseOutput">Converted UpperCase Text:</label>
+                                <textarea class="form-control mt-2" id="uppercaseOutput" rows="4" readonly></textarea>
+                            </div>
+
+                            <div class="pass_btn mt-2">
+                                <button class="copyBtn" id="copyUppercaseBtn">Copy</button>
+                                <span id="copyStatus" class="text-success ms-2 d-none">Copied!</span>
                             </div>
                         </div>
                     </div>
@@ -128,29 +135,33 @@
 @push('front_js')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.getElementById('calculateGradeBtn').addEventListener('click', function() {
-            const input = document.getElementById('marksList').value;
-            const marks = input.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
-
-            if (marks.length > 0) {
-                const total = marks.reduce((a, b) => a + b, 0);
-                const avg = total / marks.length;
-                document.getElementById('averageScore').innerText = avg.toFixed(2);
-                document.getElementById('gradeResult').innerText = getGrade(avg);
-            } else {
-                document.getElementById('averageScore').innerText = "0";
-                document.getElementById('gradeResult').innerText = "-";
-            }
+        // convert to uppercase
+        document.getElementById('convertUppercaseBtn').addEventListener('click', function() {
+            const input = document.getElementById('lowercaseInput').value;
+            const uppercase = input.toUpperCase();
+            document.getElementById('uppercaseOutput').value = uppercase;
+        });
+        // convert to uppercase
+        document.getElementById('lowercaseInput').addEventListener('keyup', function() {
+            const input = document.getElementById('lowercaseInput').value;
+            const uppercase = input.toUpperCase();
+            document.getElementById('uppercaseOutput').value = uppercase;
         });
 
-        function getGrade(avg) {
-            if (avg >= 80) return "A+";
-            else if (avg >= 70) return "A";
-            else if (avg >= 60) return "A-";
-            else if (avg >= 50) return "B";
-            else if (avg >= 40) return "C";
-            else if (avg >= 33) return "D";
-            else return "F";
-        }
+        // Copy to clipboard
+        document.getElementById('copyUppercaseBtn').addEventListener('click', function() {
+            const output = document.getElementById('uppercaseOutput');
+            output.select();
+            output.setSelectionRange(0, 99999); // for mobile
+
+            document.execCommand('copy');
+
+            // Show copy status
+            const status = document.getElementById('copyStatus');
+            status.classList.remove('d-none');
+            setTimeout(() => {
+                status.classList.add('d-none');
+            }, 1500);
+        });
     </script>
 @endpush
