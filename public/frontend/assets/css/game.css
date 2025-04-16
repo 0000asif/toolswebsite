@@ -1,0 +1,73 @@
+/* .container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+} */
+
+.game_card {
+   background-color: #ffffff;
+   padding: 30px;
+   border-radius: 12px;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+   width: 350px;
+   transition: box-shadow 0.3s ease;
+   width: 100%;
+}
+
+.game_card:hover {
+   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card_title {
+   text-align: center;
+   color: #2a2a2a;
+   font-size: 24px;
+   margin-bottom: 25px;
+   font-weight: 600;
+}
+
+.top_body input {
+   width: 100%;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   padding: 10px;
+   font-size: 16px;
+   margin-top: 10px;
+   box-sizing: border-box;
+}
+
+
+
+
+.wonMassage,
+.reamain_attempt {
+   font-weight: bold;
+}
+
+.top_body label {
+   font-size: 16px;
+   display: block;
+   margin-bottom: 5px;
+}
+
+.larg {
+   font-size: 18px;
+   color: #2a2a2a;
+   font-weight: bold;
+}
+
+  #fullscreenBtn {
+     margin-top: 10px;
+     padding: 10px 20px;
+     font-size: 16px;
+     background: #4caf50;
+     color: white;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+  }
+
+  #fullscreenBtn:hover {
+     background: #388e3c;
+  }

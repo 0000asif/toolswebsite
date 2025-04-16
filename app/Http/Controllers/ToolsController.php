@@ -64,52 +64,8 @@ class ToolsController extends Controller
         if ($slug == 'clothing-animals-nature-emoji-copy') {
             $type = 'clothe_animal_emoji';
         }
-        if ($slug == 'decimal-to-hexadecimal-converter') {
-            $type = 'decimal_hexadecimal';
-        }
-        if ($slug == 'decimal-to-binary-converter') {
-            $type = 'decimal_binary';
-        }
-        if ($slug == 'decimal-to-octal-converter') {
-            $type = 'decimal_octal';
-        }
-        if ($slug == 'binary-to-decimal-converter') {
-            $type = 'binary_decimal';
-        }
-        if ($slug == 'octal-to-decimal-converter') {
-            $type = 'octal_decimal';
-        }
-        if ($slug == 'hexadecimal-to-decimal-converter') {
-            $type = 'hexadecimal_decimal';
-        }
-        if ($slug == 'decimal-to-ascii-converter') {
-            $type = 'decimal_ascii';
-        }
-        if ($slug == 'ascii-to-decimal-converter') {
-            $type = 'ascii_decimal';
-        }
-        if ($slug == 'text-to-ascii-converter') {
-            $type = 'text_ascii';
-        }
-        if ($slug == 'ascii-to-text-converter') {
-            $type = 'ascii_text';
-        }
-        if ($slug == 'text-to-binary-converter') {
-            $type = 'text_binary';
-        }
-        if ($slug == 'binary-to-text-converter') {
-            $type = 'binary_text';
-        }
 
-        //not done
-        if ($slug == 'text-to-html-entities-converter') {
-            $type = 'text_html_entities';
-        }
-        if ($slug == 'html-entities-to-text-converter') {
-            $type = 'html_entities_text';
-        }
-
-        return view('frontend.pages.singleTools', compact('relatedBlogs', 'type'));
+        return view('frontend.pages.singleTools', compact('relatedBlogs','type'));
     }
 
     public function ToolsUsedCount(Request $request)

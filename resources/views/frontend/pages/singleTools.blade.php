@@ -38,7 +38,6 @@
     @case('clothe_animal_emoji')
         @include('frontend.pages.tools.clothe_animal_emoji')
     @break
-
     @case('percentage')
         @include('frontend.pages.tools.percentage_calculator')
     @break
@@ -46,7 +45,6 @@
     @case('average')
         @include('frontend.pages.tools.average_calculator')
     @break
-
     @case('grade')
         @include('frontend.pages.tools.grade_calculator')
     @break
