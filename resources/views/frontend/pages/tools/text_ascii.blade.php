@@ -14,37 +14,45 @@
     <div class="singlePageBg course-home-section">
 
         @php
-            $tools = App\Models\Blog::where('status', 1)->where('slug', 'grade-calculator')->first();
+            $tools = App\Models\Blog::where('status', 1)->where('slug', 'text-to-ascii-converter')->first();
         @endphp
 
         <div class="container sirajganj_single_post_container">
             <div class="row mt-3">
                 <div class="col-md-9">
                     <div class="postBody">
-                        <h2 class="postBodyTitle">{{ $tools->title ?? 'Grade Calculator' }}</h2>
+                        <h2 class="postBodyTitle">{{ $tools->title ?? 'Text ↔ ASCII Converter' }}</h2>
                     </div>
                     <input type="text" id="toolsID" value="{{ $tools->id }}" hidden>
 
-                    {{-- ========== Grade Calculator ========== --}}
+                    {{-- ========== Tool Section ========== --}}
                     <div class="mainTools">
                         <div class="password_gen text-center">
+
+                            {{-- TEXT TO ASCII --}}
                             <div class="form-group mb-3">
-                                <label for="marksList">Enter subject marks separated by commas (e.g., 85, 90, 78):</label>
-                                <textarea class="form-control mt-2" id="marksList" rows="3" placeholder="85, 90, 78, 88, 95"></textarea>
+                                <label for="textToAsciiInput">Text to ASCII:</label>
+                                <input type="text" class="form-control mt-2" id="textToAsciiInput"
+                                    placeholder="Enter text (e.g. Hello)">
+                            </div>
+                            <div class="pass_btn mt-2">
+                                <button class="generateBtn" id="convertTextToAscii">Convert</button>
+                            </div>
+                            <div class="form-group mt-2">
+                                <input type="text" class="form-control mt-2" id="asciiResult" readonly
+                                    placeholder="Result">
+                            </div>
+                            <div class="pass_btn mt-2">
+                                <button class="copyBtn" id="copyAscii">Copy</button>
+                                <span class="text-success d-none" id="asciiCopyStatus">Copied!</span>
                             </div>
 
-                            <button class="generateBtn mt-2" id="calculateGradeBtn">Calculate Grade</button>
-
-                            <div class="mt-3">
-                                <h4>Average Score: <span id="averageScore">0</span></h4>
-                                <h4>Grade: <span id="gradeResult">-</span></h4>
-                            </div>
                         </div>
                     </div>
 
-                    {{-- ========= Description ========= --}}
-                    <div class="postBodyDesc">
-                        <h3 class="my-3 text-start">Total View : <span>{{ $tools->view ?? 0 }}</span></h3>
+                    {{-- ========= Tool Description ========= --}}
+                    <div class="postBodyDesc mt-4">
+                        <h3 class="text-start">Total View : <span>{{ $tools->view ?? 0 }}</span></h3>
                     </div>
                     <div class="postBodyDesc mt-5">
                         <p class="postBodyDescText">{!! $tools->description ?? '' !!}</p>
@@ -56,6 +64,7 @@
                 </div>
             </div>
         </div>
+
 
 
         <div class="course-home-section related_post">
@@ -128,29 +137,31 @@
 @push('front_js')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.getElementById('calculateGradeBtn').addEventListener('click', function() {
-            const input = document.getElementById('marksList').value;
-            const marks = input.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
-
-            if (marks.length > 0) {
-                const total = marks.reduce((a, b) => a + b, 0);
-                const avg = total / marks.length;
-                document.getElementById('averageScore').innerText = avg.toFixed(2);
-                document.getElementById('gradeResult').innerText = getGrade(avg);
-            } else {
-                document.getElementById('averageScore').innerText = "0";
-                document.getElementById('gradeResult').innerText = "-";
-            }
+        // Convert text to ASCII
+        document.getElementById('convertTextToAscii').addEventListener('click', function() {
+            const text = document.getElementById('textToAsciiInput').value.trim();
+            if (!text) return;
+            const ascii = text.split('').map(c => c.charCodeAt(0)).join(' ');
+            document.getElementById('asciiResult').value = ascii;
         });
 
-        function getGrade(avg) {
-            if (avg >= 80) return "A+";
-            else if (avg >= 70) return "A";
-            else if (avg >= 60) return "A-";
-            else if (avg >= 50) return "B";
-            else if (avg >= 40) return "C";
-            else if (avg >= 33) return "D";
-            else return "F";
-        }
+        // Convert text to ASCII
+        document.getElementById('textToAsciiInput').addEventListener('keyup', function() {
+            const text = document.getElementById('textToAsciiInput').value.trim();
+            if (!text) return;
+            const ascii = text.split('').map(c => c.charCodeAt(0)).join(' ');
+            document.getElementById('asciiResult').value = ascii;
+        });
+
+        // Copy ASCII result
+        document.getElementById('copyAscii').addEventListener('click', function() {
+            const output = document.getElementById('asciiResult');
+            output.select();
+            document.execCommand('copy');
+            const status = document.getElementById('asciiCopyStatus');
+            status.classList.remove('d-none');
+            setTimeout(() => status.classList.add('d-none'), 1200);
+        });
+
     </script>
 @endpush
