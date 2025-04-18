@@ -2038,3 +2038,93 @@ a.login_btn:hover {
    padding: 5px 0;
    cursor: pointer;
 }
+
+
+/* ====================== Loader ===========================  */
+
+/* Fullscreen preloader overlay */
+#custom_preloader {
+   position: fixed;
+   inset: 0;
+   background-color: rgba(0, 0, 0, 0.6);
+   /* transparent black background */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 9999;
+}
+
+/* Loader animation */
+.custom_loader {
+   width: 60px;
+   aspect-ratio: 1;
+   color: #00bcd4;
+   position: relative;
+   animation: l40 0.5s infinite alternate;
+}
+
+.custom_loader:before,
+.custom_loader:after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   background-size: 25px 25px;
+   background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+   background-repeat: no-repeat;
+}
+
+.custom_loader:before {
+   background-image:
+      radial-gradient(farthest-side at top left, currentColor 96%, #0000),
+      radial-gradient(farthest-side at top right, currentColor 96%, #0000),
+      radial-gradient(farthest-side at bottom right, currentColor 96%, #0000),
+      radial-gradient(farthest-side at bottom left, currentColor 96%, #0000);
+   animation: l40-1 1s infinite;
+}
+
+.custom_loader:after {
+   background-image:
+      radial-gradient(farthest-side at top left, #0000 94%, currentColor 96%),
+      radial-gradient(farthest-side at top right, #0000 94%, currentColor 96%),
+      radial-gradient(farthest-side at bottom right, #0000 94%, currentColor 96%),
+      radial-gradient(farthest-side at bottom left, #0000 94%, currentColor 96%);
+   animation: l40-2 1s infinite;
+}
+
+@keyframes l40 {
+   0% {
+      transform: scale(1);
+   }
+
+   100% {
+      transform: scale(1.05);
+   }
+}
+
+@keyframes l40-1 {
+
+   0%,
+   10%,
+   90%,
+   100% {
+      inset: 0
+   }
+
+   40%,
+   60% {
+      inset: -10px
+   }
+}
+
+@keyframes l40-2 {
+
+   0%,
+   40% {
+      transform: rotate(0deg)
+   }
+
+   60%,
+   100% {
+      transform: rotate(90deg)
+   }
+}

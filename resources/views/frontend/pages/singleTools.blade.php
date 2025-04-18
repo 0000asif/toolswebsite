@@ -11,6 +11,34 @@
         @include('frontend.pages.tools.strong_password_gen')
     @break
 
+    @case('domain_name_checker')
+        @include('frontend.pages.tools.domain_name_checker')
+    @break
+
+    @case('what_id_address')
+        @include('frontend.pages.tools.what_id_ip')
+    @break
+
+    @case('ip_address_location')
+        @include('frontend.pages.tools.ip_address_location')
+    @break
+
+    @case('free_placeholder_image')
+        @include('frontend.pages.tools.free_placeholder_image')
+    @break
+
+    @case('free_brand_logo')
+        @include('frontend.pages.tools.free_brand_logo')
+    @break
+
+    @case('meme_image_download')
+        @include('frontend.pages.tools.meme_image_download')
+    @break
+
+    @case('space_station_map')
+        @include('frontend.pages.tools.space_station_map')
+    @break
+
     @case('random_number')
         @include('frontend.pages.tools.random_number_generator')
     @break

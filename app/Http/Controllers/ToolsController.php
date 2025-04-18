@@ -92,6 +92,28 @@ class ToolsController extends Controller
         if($slug == 'online-math-calculator'){
             $type = 'math_calculator';    
         }
+        if($slug == 'domain-name-checker'){
+            $type = 'domain_name_checker';    
+        }
+
+        if($slug == 'what-is-my-ip-find-my-ip-address'){
+            $type = 'what_id_address';    
+        }
+        if($slug == 'ip-address-location'){
+            $type = 'ip_address_location';    
+        }
+        if($slug == 'free-placeholder-image'){
+            $type = 'free_placeholder_image';    
+        }
+        if($slug == 'current-position-of-the-iss'){
+            $type = 'space_station_map';    
+        }
+        if($slug == 'free-meme-image-download'){
+            $type = 'meme_image_download';    
+        }
+        if ($slug == 'free-brand-logo-download') {
+            $type = 'free_brand_logo';
+        }
 
         // ---------- Game ------------------
         if($slug == 'online-guessing-game'){
@@ -100,6 +122,7 @@ class ToolsController extends Controller
         if($slug == 'online-snake-game'){
             $type = 'snake_game';
         }
+
         return view('frontend.pages.singleTools', compact('relatedBlogs','type'));
     }
 
