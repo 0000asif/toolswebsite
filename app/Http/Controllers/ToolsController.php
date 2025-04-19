@@ -118,6 +118,12 @@ class ToolsController extends Controller
         if ($slug == 'free-brand-logo-download') {
             $type = 'free_brand_logo';
         }
+        if ($slug == 'website-seo-checker') {
+            $type = 'website_seo_checker';
+        }
+        if ($slug == 'random-user-generator') {
+            $type = 'random_user_generator';
+        }
 
         // ---------- Game ------------------
         if($slug == 'online-guessing-game'){

@@ -31,6 +31,14 @@
         @include('frontend.pages.tools.free_brand_logo')
     @break
 
+    @case('website_seo_checker')
+        @include('frontend.pages.tools.website_seo_checker')
+    @break
+
+    @case('random_user_generator')
+        @include('frontend.pages.tools.random_user_generator')
+    @break
+
     @case('meme_image_download')
         @include('frontend.pages.tools.meme_image_download')
     @break
