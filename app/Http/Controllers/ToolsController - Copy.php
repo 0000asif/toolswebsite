@@ -65,7 +65,6 @@ class ToolsController extends Controller
             $type = 'clothe_animal_emoji';
         }
 
-<<<<<<< HEAD
         if($slug == 'food-activity-sport-emoji-copy'){
             $type = 'food_sport_emoji';
         }
@@ -128,8 +127,6 @@ class ToolsController extends Controller
             $type = 'snake_game';
         }
 
-=======
->>>>>>> f6cce11a5f757cc42131db1fce871ccc3f9af655
         return view('frontend.pages.singleTools', compact('relatedBlogs','type'));
     }
 
