@@ -64,8 +64,17 @@ class ToolsController extends Controller
         if ($slug == 'clothing-animals-nature-emoji-copy') {
             $type = 'clothe_animal_emoji';
         }
+        if ($slug == 'text-to-qr-code-generator') {
+            $type = 'text_to_qr_code';
+        }
+        if ($slug == 'text-logo') {
+            $type = 'text_logo';
+        }
+        if ($slug == 'jobs-finds') {
+            $type = 'jobs_finds';
+        }
 
-        return view('frontend.pages.singleTools', compact('relatedBlogs','type'));
+        return view('frontend.pages.singleTools', compact('relatedBlogs', 'type'));
     }
 
     public function ToolsUsedCount(Request $request)

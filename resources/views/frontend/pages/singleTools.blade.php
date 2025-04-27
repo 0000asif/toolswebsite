@@ -38,6 +38,7 @@
     @case('clothe_animal_emoji')
         @include('frontend.pages.tools.clothe_animal_emoji')
     @break
+
     @case('percentage')
         @include('frontend.pages.tools.percentage_calculator')
     @break
@@ -45,6 +46,7 @@
     @case('average')
         @include('frontend.pages.tools.average_calculator')
     @break
+
     @case('grade')
         @include('frontend.pages.tools.grade_calculator')
     @break
@@ -100,14 +102,29 @@
     @case('binary_text')
         @include('frontend.pages.tools.binary_text')
     @break
+
     @case('text_binary')
         @include('frontend.pages.tools.text_binary')
     @break
+
     @case('text_html_entities')
         @include('frontend.pages.tools.text_html_entities')
     @break
+
     @case('html_entities_text')
         @include('frontend.pages.tools.html_entities_text')
+    @break
+
+    @case('text_to_qr_code')
+        @include('frontend.pages.tools.text_to_qr_code')
+    @break
+
+    @case('text_logo')
+        @include('frontend.pages.tools.text_logo')
+    @break
+
+    @case('jobs_finds')
+        @include('frontend.pages.tools.jobs_finder')
     @break
 
     @default
