@@ -145,7 +145,13 @@
     @case('html_entities_text')
         @include('frontend.pages.tools.html_entities_text')
     @break
+    @case('jobs_finds')
+        @include('frontend.pages.tools.jobs_finder')
+    @break
 
+    @case('public_job')
+        @include('frontend.pages.tools.public_jobs')
+    @break
     @default
         <p>Select a tool to view.</p>
 @endswitch

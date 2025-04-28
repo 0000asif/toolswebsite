@@ -125,6 +125,13 @@ class ToolsController extends Controller
             $type = 'random_user_generator';
         }
 
+        if ($slug == 'jobs-finds') {
+            $type = 'jobs_finds';
+        }
+
+        if ($slug == 'public-job') {
+            $type = 'public_job';
+        }
         // ---------- Game ------------------
         if($slug == 'online-guessing-game'){
             $type = 'guessing_game';
