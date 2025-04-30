@@ -132,6 +132,62 @@ class ToolsController extends Controller
         if ($slug == 'public-job') {
             $type = 'public_job';
         }
+
+        if ($slug == 'uppercase-lowercase') {
+            $type = 'uppercase_lowercase';
+        }
+        if ($slug == 'lowercase-uppercase') {
+            $type = 'lowercase_uppercase';
+        }
+        if ($slug == 'decimal-hexadecimal') {
+            $type = 'decimal_hexadecimal';
+        }
+        if ($slug == 'decimal-binary') {
+            $type = 'decimal_binary';
+        }
+        if ($slug == 'decimal-octal') {
+            $type = 'decimal_octal';
+        }
+        if ($slug == 'binary-decimal') {
+            $type = 'binary_decimal';
+        }
+        if ($slug == 'octal-decimal') {
+            $type = 'octal_decimal';
+        }
+        if ($slug == 'hexadecimal-decimal') {
+            $type = 'hexadecimal_decimal';
+        }
+        if ($slug == 'decimal-ascii') {
+            $type = 'decimal_ascii';
+        }
+        if ($slug == 'ascii-decimal') {
+            $type = 'ascii_decimal';
+        }
+        if ($slug == 'ascii-text') {
+            $type = 'ascii_text';
+        }
+        if ($slug == 'text-ascii') {
+            $type = 'text_ascii';
+        }
+        if ($slug == 'binary-text') {
+            $type = 'binary_text';
+        }
+        if ($slug == 'text-binary') {
+            $type = 'text_binary';
+        }
+        if ($slug == 'text-html-entities') {
+            $type = 'text_html_entities';
+        }
+        if ($slug == 'html-entities-text') {
+            $type = 'html_entities_text';
+        }
+        if ($slug == 'text-to-qr-code') {
+            $type = 'text_to_qr_code';
+        }
+        if ($slug == 'text-logo') {
+            $type = 'text_logo';
+        }
+
         // ---------- Game ------------------
         if($slug == 'online-guessing-game'){
             $type = 'guessing_game';

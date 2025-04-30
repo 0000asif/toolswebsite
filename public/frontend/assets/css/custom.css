@@ -153,13 +153,31 @@ button.text-reset.aside-close {
    max-height: 210px;
    align-content: center;
 }
-
 .sirajganj_cat_card img {
+   width: 80px;
+   /* Smaller fixed width */
+   max-width: 80px;
+   /* Also restrict maximum width */
+   height: auto;
+   /* Keep aspect ratio */
+   border-radius: 8px;
+   /* Slightly smaller border-radius for small images */
+   transition: transform 0.3s ease;
+   margin: 0 auto;
+   /* Center the image */
+   display: block;
+   /* So margin works properly */
+}
+.sirajganj_cat_card h5 {
+   margin-top: 11px;
+   font-size: 18px;
+}
+/* .sirajganj_cat_card img {
    width: 100%;
    max-width: 110px;
    border-radius: 10px;
    transition: transform 0.3s ease;
-}
+} */
 
 .sirajganj_cat_card h2 {
    font-size: 22px;

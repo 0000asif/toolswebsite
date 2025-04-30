@@ -80,8 +80,9 @@
                                         </h2>
                                     </div>
                                     <div class="col-12">
-                                        <p class="homepage_category_para">
-                                            {!! $all_tools->first()->category->text !!}</p>
+                                        <span class="homepage_category_para">
+                                            {!! $all_tools->first()->category->text !!}
+                                        </span>
                                     </div>
                                 </div>
 
@@ -90,7 +91,7 @@
                                         <a href="{{ route('ViewSingleTools', $tool->slug) }}">
                                             <div class="sirajganj_cat_card">
                                                 <img src="{{ asset('public/images/blogs/' . $tool->main_img) }}"
-                                                    alt="img" style="height: 100px; object-fit: cover;">
+                                                    alt="img" >
                                                 <h5>{{ $tool->title }}</h5>
                                             </div>
                                         </a>

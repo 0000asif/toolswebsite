@@ -162,12 +162,79 @@
     @case('jobs_finds')
         @include('frontend.pages.tools.jobs_finder')
     @break
-    @case('jobs_finds')
-        @include('frontend.pages.tools.jobs_finder')
-    @break
-
     @case('public_job')
         @include('frontend.pages.tools.public_jobs')
+    @break
+    @case('uppercase_lowercase')
+        @include('frontend.pages.tools.uppercase_lowercase')
+    @break
+
+    @case('lowercase_uppercase')
+        @include('frontend.pages.tools.lowercase_uppercase')
+    @break
+
+    @case('decimal_hexadecimal')
+        @include('frontend.pages.tools.decimal_hexadecimal')
+    @break
+
+    @case('decimal_binary')
+        @include('frontend.pages.tools.decimal_binary')
+    @break
+
+    @case('decimal_octal')
+        @include('frontend.pages.tools.decimal_octal')
+    @break
+
+    @case('binary_decimal')
+        @include('frontend.pages.tools.binary_decimal')
+    @break
+
+    @case('octal_decimal')
+        @include('frontend.pages.tools.octal_decimal')
+    @break
+
+    @case('hexadecimal_decimal')
+        @include('frontend.pages.tools.hexadecimal_decimal')
+    @break
+
+    @case('decimal_ascii')
+        @include('frontend.pages.tools.decimal_to_ascii_converter')
+    @break
+
+    @case('ascii_decimal')
+        @include('frontend.pages.tools.ascii_decimal')
+    @break
+
+    @case('ascii_text')
+        @include('frontend.pages.tools.ascii_text')
+    @break
+
+    @case('text_ascii')
+        @include('frontend.pages.tools.text_ascii')
+    @break
+
+    @case('binary_text')
+        @include('frontend.pages.tools.binary_text')
+    @break
+
+    @case('text_binary')
+        @include('frontend.pages.tools.text_binary')
+    @break
+
+    @case('text_html_entities')
+        @include('frontend.pages.tools.text_html_entities')
+    @break
+
+    @case('html_entities_text')
+        @include('frontend.pages.tools.html_entities_text')
+    @break
+
+    @case('text_to_qr_code')
+        @include('frontend.pages.tools.text_to_qr_code')
+    @break
+
+    @case('text_logo')
+        @include('frontend.pages.tools.text_logo')
     @break
     @default
         <p>Select a tool to view.</p>

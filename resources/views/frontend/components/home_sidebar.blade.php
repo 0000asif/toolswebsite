@@ -3,66 +3,53 @@
     @endphp
     <div class="single_post_sidebar">
         <div class="aside_body">
-            <li class="aside_devider">সিরাজগঞ্জ</a> </li>
-            <li><a href="#"><i class="bi bi-building-fill"></i> <span class="aside_item">সিরাজগঞ্জের সকল উপজেলা </span>
+            <li class="aside_devider">Out Top Tools</a> </li>
+            <li><a href="#"><i class="bi bi-building-fill"></i> <span class="aside_item">Domain Availability Checker  </span>
                 </a> </li>
-            <li><a href="#"><i class="bi bi-union"></i> <span class="aside_item">সিরাজগঞ্জের সকল ইউনিয়ন
+            <li><a href="#"><i class="bi bi-union"></i> <span class="aside_item">Free Placeholder Img Downloader</span>
+                </a> </li>
+            <li><a href="#"><i class="bi bi-luggage-fill"></i> <span class="aside_item">Free Meme Image Downloader
                     </span>
                 </a> </li>
-            <li><a href="#"><i class="bi bi-luggage-fill"></i> <span class="aside_item">সিরাজগঞ্জের দর্শনীয় স্থান
-                    </span>
-                </a> </li>
-            <li><a href="#"><i class="bi bi-person-square"></i> <span class="aside_item">সিরাজগঞ্জের বিখ্যাত
-                        ব্যাক্তিত্য
+            <li><a href="#"><i class="bi bi-person-square"></i> <span class="aside_item">Free Brand Logo Downloader
                     </span></li>
-            <li><a href="{{ route('ads') }}"><i class="bi bi-badge-ad"></i> <span class="aside_item">আপনার
-                        প্রতিষ্ঠানের বিজ্ঞাপন দিন </span>
+            <li><a href="{{ route('ads') }}"><i class="bi bi-badge-ad"></i> <span class="aside_item">Show Your Brand Adds </span>
+            <li><a href="{{ route('ads') }}"><i class="bi bi-badge-ad"></i> <span class="aside_item">Website Technology Finder </span>
+            <li><a href="{{ route('ads') }}"><i class="bi bi-badge-ad"></i> <span class="aside_item">Website Seo Checker </span>
 
 
-            <li class="aside_devider">অন্যান্য সেবাসমূহ</a> </li>
+            <li class="aside_devider">Others Services</a> </li>
 
-            <li><a href="{{ route('MobileApps') }}"><i class="bi bi-house-fill"></i> <span class="aside_item"> মোবাইল
-                        অ্যাপ ডাউনলোড করুন </span>
+            <li><a href="{{ route('MobileApps') }}"><i class="bi bi-house-fill"></i> <span class="aside_item"> Download Our Mobile Apps </span>
                 </a> </li>
-            <li><a href="{{ $setting->fb_link ?? '' }}"><i class="bi bi-droplet-half"></i> <span
-                        class="aside_item">ব্লাড ডোনার </span></a> </li>
-            <li><a href="{{ $setting->x_link ?? '' }}"><i class="bi bi-droplet"></i> <span class="aside_item">ব্লাড
-                        পোষ্ট </span></a> </li>
-            <li><a href="{{ $setting->email ?? '' }}"><i class="bi bi-postcard"></i> <span class="aside_item">মাহফিলের
-                        পোস্টার </span></a> </li>
+            <li><a href="{{ $setting->fb_link ?? '' }}"><i class="bi bi-mortarboard"></i> <span
+                        class="aside_item">International Job </span></a> </li>
+            <li><a href="{{ $setting->x_link ?? '' }}"><i class="bi bi-droplet"></i> <span class="aside_item">International Remote Job </span></a> </li>
+            <li><a href="{{ $setting->email ?? '' }}"><i class="bi bi-postcard"></i> <span class="aside_item">Online Snake Game </span></a> </li>
             <li><a href="{{ $setting->whatsapp_number ?? '' }}"><i class="bi bi-mortarboard"></i> <span
-                        class="aside_item"> চাকরি </span></a> </li>
+                        class="aside_item"> Online Guessing Game </span></a> </li>
 
-            <li class="aside_devider">আমাদের সাথে যুক্ত হোন</a> </li>
+            <li class="aside_devider">Follow Us On Social Media</a> </li>
 
 
-            <li><a href="{{ $setting->fb_link ?? '' }}"><i class="bi bi-flag-fill"></i> <span class="aside_item">ফেসবুক
-                        পেজ </span></a> </li>
-            <li><a href="{{ $setting->x_link ?? '' }}"><i class="bi bi-facebook"></i> <span class="aside_item">ফেসবুক
-                        গ্রুপ </span></a> </li>
+            <li><a href="{{ $setting->fb_link ?? '' }}"><i class="bi bi-flag-fill"></i> <span class="aside_item">Facebook Page </span></a> </li>
+
             <li><a href="{{ $setting->email ?? '' }}"><i class="bi bi-envelope-check-fill"></i> <span
-                        class="aside_item">ইমেইল
+                        class="aside_item"> Email
                     </span></a> </li>
             <li><a href="{{ $setting->whatsapp_number ?? '' }}"><i class="bi bi-whatsapp"></i> <span
-                        class="aside_item">হোয়াটসঅ্যাপ </span></a> </li>
-            <li><a href="{{ $setting->linkedin ?? '' }}"><i class="bi bi-youtube"></i> <span class="aside_item">ইউটিউব
+                        class="aside_item">WhatsApp </span></a> </li>
+            <li><a href="{{ $setting->linkedin ?? '' }}"><i class="bi bi-youtube"></i> <span class="aside_item">Youtube
                     </span></a> </li>
-            <li id="share" style="cursor: pointer"><a><i class="bi bi-share"></i> <span class="aside_item">শেয়ার
-                        করুন</span></a> </li>
+            <li id="share" style="cursor: pointer"><a><i class="bi bi-share"></i> <span class="aside_item">Share Us</span></a> </li>
 
-            <li class="aside_devider">প্রয়োজনীয় লিংক</a> </li>
+            <li class="aside_devider">Usefull Links</a> </li>
 
-            <li><a href="{{ route('about_us') }}"><i class="bi bi-collection"></i> <span class="aside_item">আমাদের
-                        প্লাটফর্ম সম্পর্কে </span></a> </li>
-            <li><a href="{{ route('contact_us') }}"><i class="bi bi-person-lines-fill"></i> <span
-                        class="aside_item">যোগাযোগ
-                    </span></a> </li>
-            <li><a href="{{ route('privacy-policy') }}"><i class="bi bi-shield-lock-fill"></i> <span
-                        class="aside_item">প্রাইভেসি পলিসি </span></a> </li>
-            <li><a href="{{ route('ads') }}"><i class="bi bi-badge-ad-fill"></i> <span class="aside_item">বিজ্ঞাপন দিন
-                    </span></a> </li>
-            <li><a href="{{ route('terms-and-conditions') }}"><i class="bi bi-list-check"></i> <span
-                        class="aside_item">টার্মস & কন্ডিশন্স </span></a> </li>
+            <li><a href="{{ route('about_us') }}"><i class="bi bi-collection"></i> <span class="aside_item"> About Us </span></a> </li>
+            <li><a href="{{ route('contact_us') }}"><i class="bi bi-person-lines-fill"></i> <span class="aside_item">Contact</span></a> </li>
+            <li><a href="{{ route('privacy-policy') }}"><i class="bi bi-shield-lock-fill"></i> <span class="aside_item">Privacy Policy </span></a> </li>
+            <li><a href="{{ route('terms-and-conditions') }}"><i class="bi bi-list-check"></i> <span class="aside_item">Terms & Conditions </span></a> </li>
+            <li><a href="{{ route('ads') }}"><i class="bi bi-badge-ad-fill"></i> <span class="aside_item">Place Your Adds</span></a> </li>
 
 
 
